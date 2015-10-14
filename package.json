@@ -1,0 +1,43 @@
+{
+  "name": "oradbpm-cli",
+  "version": "0.0.1",
+  "description": "Oracle DB Package Manager CLI",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s-oravec/oradbpm-cli"
+  },
+  "preferGlobal": true,
+  "keywords": [
+    "Oracle",
+    "Package",
+    "Module",
+    "Manager",
+    "CLI"
+  ],
+  "bin": {
+    "oradbpm": "index.js"
+  },
+  "author": "Štefan Oravec",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s-oravec/oradbpm-cli/issues"
+  },
+  "homepage": "https://github.com/s-oravec/oradbpm-cli",
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "chalk": "^1.1.1",
+    "commander": "^2.8.1",
+    "config": "^1.16.0",
+    "node-rest-client": "^1.5.1",
+    "read": "^1.0.7",
+    "request": "^2.65.0",
+    "request-promise": "^1.0.0",
+    "semver": "^5.0.3",
+    "tough-cookie": "^2.2.0",
+    "tough-cookie-filestore": "0.0.1",
+    "urlencode": "^1.1.0"
+  }
+}
