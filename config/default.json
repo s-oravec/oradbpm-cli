@@ -1,0 +1,14 @@
+{
+  "repository": {
+    "username": "not set in config",
+    "uri": "https://localhost",
+    "port": "3000",
+    "method" : {
+      "login"  : "/api/auth/signin",
+      "publish": "/api/1/packages",
+      "search": "/api/1/packages?searchPhrase="
+    }
+  },
+  "allowSelfSignedCertificates": "true",
+  "cookieStoreFileName": "./.cookie.json"
+}

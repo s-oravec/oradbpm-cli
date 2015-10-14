@@ -1,0 +1,54 @@
+#! /usr/bin/env node
+
+'use strict';
+
+var program = require('commander'),
+    read = require('read'),
+    repository = require('config').get('repository'),
+    OraDBPM = require('./lib/oradbpm');
+
+program.version(OraDBPM.getVersion());
+
+program
+  .command('login')
+  .description('login into repository account')
+  .action(function () {
+    read({prompt: 'Username: ', default: repository.username}, function (er, username) {
+      read({prompt: 'Password: ', silent: true }, function (er, password) {
+          return OraDBPM.login(username, password);
+        });
+    });
+  });
+
+program
+  .command('publish')
+  .description('publish package into repository')
+  .action(function() {
+    return OraDBPM.publish();
+  });
+
+program
+  .command('bump-version <newVersion> | major | minor | patch | premajor | preminor | prepatch | prerelease')
+  .description('bump package version')
+  .action(function(newVersion) {
+    return OraDBPM.bumpVersion(newVersion);
+  });
+
+program
+  .command('search query')
+  .description('search repository for search phrase')
+  .action(function (query) {
+    return OraDBPM.search(query);
+  });
+
+//program
+//  .command('get moduleName')
+//  .option('-s, --save', 'save as dependency to OraDBPM package definition')
+//  .description('get package from repository')
+//  .action(function (moduleName) {
+//    console.log('moduleName',moduleName);
+//    console.log('save option', program.save);
+//  })
+//;
+
+program.parse(process.argv);

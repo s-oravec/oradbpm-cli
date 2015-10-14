@@ -1,0 +1,14 @@
+{
+  "name": "pete",
+  "version": "0.9.0",
+  "description": "Awesome PL/SQL testing framework",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/principal-engineering/pete"
+  },
+  "license": "MIT",
+  "keywords": [
+    "test",
+    "pslql"
+  ]
+}
