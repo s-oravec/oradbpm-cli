@@ -41,6 +41,11 @@ program
     return OraDBPM.search(query);
   });
 
+program
+  .command('whoami')
+  .description('prints username config to stdout')
+  .action(OraDBPM.whoami);
+
 //program
 //  .command('get moduleName')
 //  .option('-s, --save', 'save as dependency to OraDBPM package definition')

@@ -1,6 +1,6 @@
 {
   "repository": {
-    "username": "not set in config",
+    "username": "stiivo",
     "uri": "https://localhost",
     "port": "3000",
     "method" : {
