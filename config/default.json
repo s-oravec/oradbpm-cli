@@ -2,10 +2,9 @@
   "repository": {
     "uri": "https://localhost",
     "port": "3000",
-    "method" : {
+    "apiUrl" : {
       "login"  : "/api/auth/signin",
-      "publish": "/api/1/packages",
-      "search": "/api/1/packages?searchPhrase="
+      "packages": "/api/1/packages"
     }
   },
   "allowSelfSignedCertificates": "true",

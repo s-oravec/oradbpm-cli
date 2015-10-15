@@ -1,17 +1,1 @@
-{
-  "localhost": {
-    "/": {
-      "sessionId": {
-        "key": "sessionId",
-        "value": "s%3AqjK6RbFP3PXDD8dWqHSKaZubMZJD1b97.4rOjtYkSf3%2BcGM92YqLWngbuPPF3j4oFE4II262qMVU",
-        "expires": "2015-10-15T09:29:04.000Z",
-        "domain": "localhost",
-        "path": "/",
-        "httpOnly": true,
-        "hostOnly": true,
-        "creation": "2015-10-14T07:23:51.399Z",
-        "lastAccessed": "2015-10-14T09:29:04.544Z"
-      }
-    }
-  }
-}
+{"localhost":{"/":{"sessionId":{"key":"sessionId","value":"s%3AGVXNuIb7yWgf6G9IZ5XURsnN2UBPCEK_.IMzkqVsADRc0FRE1J5liPPiVwcRCVesLy7ywRAfdEaA","expires":"2015-10-16T09:44:23.000Z","domain":"localhost","path":"/","httpOnly":true,"hostOnly":true,"creation":"2015-10-15T09:43:37.675Z","lastAccessed":"2015-10-15T09:44:23.544Z"}}}}

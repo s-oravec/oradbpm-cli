@@ -1,6 +1,6 @@
 {
   "name": "pete",
-  "version": "0.9.0",
+  "version": "0.11.0",
   "description": "Awesome PL/SQL testing framework",
   "repository": {
     "type": "git",

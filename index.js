@@ -48,6 +48,13 @@ program
     return OraDBPM.whoami();
   });
 
+program
+  .command('view packageName')
+  .description('prints package from repositry')
+  .action(function (packageName) {
+    return OraDBPM.view(packageName);
+  });
+
 //program
 //  .command('get moduleName')
 //  .option('-s, --save', 'save as dependency to OraDBPM package definition')
