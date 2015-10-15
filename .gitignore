@@ -1,6 +1,8 @@
+/config/local.json
 # Logs
 logs
 *.log
+.idea
 
 # Runtime data
 pids

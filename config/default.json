@@ -1,6 +1,5 @@
 {
   "repository": {
-    "username": "stiivo",
     "uri": "https://localhost",
     "port": "3000",
     "method" : {
@@ -10,5 +9,6 @@
     }
   },
   "allowSelfSignedCertificates": "true",
-  "cookieStoreFileName": "./.cookie.json"
+  "cookieStoreFileName": "./.cookie.json",
+  "username" : ""
 }

@@ -3,9 +3,9 @@
 'use strict';
 
 var program = require('commander'),
-    read = require('read'),
-    repository = require('config').get('repository'),
-    OraDBPM = require('./lib/oradbpm');
+  read = require('read'),
+  username = require('config').get('username'),
+  OraDBPM = require('./lib/oradbpm');
 
 program.version(OraDBPM.getVersion());
 
@@ -13,24 +13,24 @@ program
   .command('login')
   .description('login into repository account')
   .action(function () {
-    read({prompt: 'Username: ', default: repository.username}, function (er, username) {
-      read({prompt: 'Password: ', silent: true }, function (er, password) {
-          return OraDBPM.login(username, password);
-        });
+    read({prompt: 'Username: ', default: username}, function (er, username) {
+      read({prompt: 'Password: ', silent: true}, function (er, password) {
+        return OraDBPM.login(username, password);
+      });
     });
   });
 
 program
   .command('publish')
   .description('publish package into repository')
-  .action(function() {
+  .action(function () {
     return OraDBPM.publish();
   });
 
 program
   .command('bump-version <newVersion> | major | minor | patch | premajor | preminor | prepatch | prerelease')
   .description('bump package version')
-  .action(function(newVersion) {
+  .action(function (newVersion) {
     return OraDBPM.bumpVersion(newVersion);
   });
 
@@ -44,7 +44,9 @@ program
 program
   .command('whoami')
   .description('prints username config to stdout')
-  .action(OraDBPM.whoami);
+  .action(function () {
+    return OraDBPM.whoami();
+  });
 
 //program
 //  .command('get moduleName')
