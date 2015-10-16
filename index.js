@@ -49,6 +49,13 @@ program
   });
 
 program
+  .command('logout')
+  .description('logs out from repository')
+  .action(function () {
+    return OraDBPM.logout();
+  });
+
+program
   .command('view packageName')
   .description('prints package from repositry')
   .action(function (packageName) {
