@@ -1,12 +1,7 @@
 {
   "repository": {
     "uri": "https://localhost",
-    "port": "3000",
-    "apiUrl" : {
-      "login"  : "/api/auth/signin",
-      "logout"  : "/api/auth/signout",
-      "packages": "/api/1/packages"
-    }
+    "port": "3000"
   },
   "allowSelfSignedCertificates": "true",
   "cookieStoreFileName": "./.cookie.json",

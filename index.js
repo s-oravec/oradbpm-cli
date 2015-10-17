@@ -2,12 +2,15 @@
 
 'use strict';
 
+process.env['NODE_CONFIG_DIR'] = __dirname + '/config';
+
 var program = require('commander'),
   read = require('read'),
   username = require('config').get('username'),
-  OraDBPM = require('./lib/oradbpm');
+  OraDBPM = require('./lib/oradbpm'),
+  pkg = require('./package.json');
 
-program.version(OraDBPM.getVersion());
+program.version(pkg.version);
 
 program
   .command('login')

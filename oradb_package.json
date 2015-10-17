@@ -1,10 +1,10 @@
 {
   "name": "pete",
-  "version": "0.7.0",
+  "version": "0.0.1",
   "description": "Awesome PL/SQL testing framework",
   "repository": {
     "type": "git",
-    "url": "https://github.com/principal-engineering/pete"
+    "url": "test/git_repo"
   },
   "license": "MIT",
   "keywords": [
