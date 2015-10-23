@@ -1,7 +1,7 @@
 'use strict';
 
 var chai = require('chai'),
-  PackageDependency = require('../lib/oradbpm/PackageDependency');
+  PackageDependency = require('../../../lib/oradbpm/model/PackageDependency');
 
 chai.should();
 

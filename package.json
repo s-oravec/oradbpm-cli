@@ -18,7 +18,7 @@
     "CLI"
   ],
   "bin": {
-    "oradbpm": "index.js"
+    "oradbpm": "./bin/oradbpm.js"
   },
   "author": "Štefan Oravec",
   "license": "MIT",

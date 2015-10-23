@@ -5,21 +5,18 @@ var chaiAsPromised = require('chai-as-promised');
 chai.should();
 chai.use(chaiAsPromised);
 
-var repoMock = require('./mock/PackageRepositoryService');
-var SimplePackageRepositoryData = require('./mock/data/SimplePackageRepository').data;
+var repoMock = require('./../../mock/PackageRepositoryService');
+var SimplePackageRepositoryData = require('./../../mock/data/SimplePackageRepository').data;
 
-var PackageDependencyTree = require('../lib/oradbpm/PackageDependencyTree');
-var PackageVersion = require('../lib/oradbpm/PackageVersion');
+var PackageDependencyTree = require('../../../lib/oradbpm/controller/PackageDependencyTree');
+var PackageVersion = require('../../../lib/oradbpm/model/PackageVersion');
 
 describe('PackageDependencyTree', function () {
 
   var packageRepositoryService = repoMock.PackageRepositoryServiceFactory();
 
-  before(function () {
-    packageRepositoryService.setData(SimplePackageRepositoryData);
-  });
-
   it('init tree for package with no dependency works', function () {
+    packageRepositoryService.setData(SimplePackageRepositoryData);
     var dt = new PackageDependencyTree(packageRepositoryService);
     return dt.initWithPackageVersion(new PackageVersion({
       name: 'foo',
@@ -29,6 +26,7 @@ describe('PackageDependencyTree', function () {
   });
 
   it('init tree for package with simple dependency works', function () {
+    packageRepositoryService.setData(SimplePackageRepositoryData);
     var dt = new PackageDependencyTree(packageRepositoryService);
     return dt.initWithPackageVersion(new PackageVersion({
       name: 'foo',
@@ -39,6 +37,7 @@ describe('PackageDependencyTree', function () {
   });
 
   it('init tree for package with invalid dependency throws', function () {
+    packageRepositoryService.setData(SimplePackageRepositoryData);
     var dt = new PackageDependencyTree(packageRepositoryService);
     return dt.initWithPackageVersion(new PackageVersion({
       name: 'foo',
@@ -49,6 +48,7 @@ describe('PackageDependencyTree', function () {
   });
 
   it('init tree for package with dependency on nonexistent package throws', function () {
+    packageRepositoryService.setData(SimplePackageRepositoryData);
     var dt = new PackageDependencyTree(packageRepositoryService);
     return dt.initWithPackageVersion(new PackageVersion({
       name: 'foo',

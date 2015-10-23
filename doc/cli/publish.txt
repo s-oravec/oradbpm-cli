@@ -1,0 +1,9 @@
+Usage: oradbpm publish
+
+Description:
+
+  Some epic info
+
+Examples:
+
+  $ oradbpm publish
