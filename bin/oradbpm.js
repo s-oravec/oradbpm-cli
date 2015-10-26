@@ -4,9 +4,13 @@
 var CLI = require('../lib/cli');
 
 var cli = new CLI();
+
 cli
   .parse(process.argv)
+  .then(function (parsedArgs) {
+    return cli.executeCommand(parsedArgs);
+  })
   .catch(function (err) {
-    proces.exit(err.exitCode || 1);
+    process.exit(err.exitCode || 1);
   });
 
