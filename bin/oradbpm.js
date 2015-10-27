@@ -2,7 +2,7 @@
 'use strict';
 
 var CLI = require('../lib/cli');
-var debug = require('debug')('cli');
+var debug = require('debug')('oradbpm:bin');
 
 var cli = new CLI();
 
@@ -16,7 +16,9 @@ cli
     return undefined;
   })
   .catch(function (err) {
-    debug('err', err);
+    debug('error', err.exitCode);
+    debug('error', err.name);
+    debug('error', err.message);
     process.exit(err.exitCode || 1);
   });
 

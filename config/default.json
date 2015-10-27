@@ -1,9 +1,7 @@
 {
   "repository": {
+    "allowSelfSignedCertificates": "true",
     "uri": "https://localhost",
     "port": "3000"
-  },
-  "allowSelfSignedCertificates": "true",
-  "cookieStoreFileName": "./config/cookie.json",
-  "username" : ""
+  }
 }

@@ -5,6 +5,7 @@ logs
 *.log
 
 # Runtime data
+/config/cookie.json
 pids
 *.pid
 *.seed
