@@ -11,10 +11,6 @@ cli
   .then(function (parsedArgs) {
     return cli.executeCommand(parsedArgs);
   })
-  .then(function () {
-    //just waiting for resolve and doing nothing
-    return undefined;
-  })
   .catch(function (err) {
     debug('error', err.exitCode);
     debug('error', err.name);

@@ -8,7 +8,7 @@ chai.use(chaiAsPromised);
 var Bluebird = require('bluebird');
 var PackageRepositoryService = require('./../../../lib/oradbpm.client/service/PackageRepositoryService.js');
 var fs = Bluebird.promisifyAll(require('fs'));
-var debug = require('debug')('oradbpm:PackageRepositoryService:test');
+var debug = require('debug')('oradbpm:service:package-repository:test');
 
 describe('PackageRepositoryService', function () {
 
