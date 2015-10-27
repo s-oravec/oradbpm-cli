@@ -17,6 +17,9 @@ describe('OraDBPMClient', function () {
     oradbpmclient.should.have.property('localConfigFileService');
     //methods
     oradbpmclient.should.have.property('login');
+    oradbpmclient.should.have.property('logout');
+    //oradbpmclient.should.have.property('help');
+    //oradbpmclient.should.have.property('version');
   });
 
 });

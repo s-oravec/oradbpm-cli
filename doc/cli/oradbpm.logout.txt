@@ -1,0 +1,9 @@
+Usage: oradbpm logout
+
+Description:
+
+  Logout from repository.
+
+Examples:
+
+  $ oradbpm logout
