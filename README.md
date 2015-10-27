@@ -1,3 +1,6 @@
+[![bitHound Score](https://www.bithound.io/github/s-oravec/oradbpm-cli/badges/score.svg)](https://www.bithound.io/github/s-oravec/oradbpm-cli)
+[![bitHound Dependencies](https://www.bithound.io/github/s-oravec/oradbpm-cli/badges/dependencies.svg)](https://www.bithound.io/github/s-oravec/oradbpm-cli/master/dependencies/npm)
+
 # Oracle DB Package Manager CLI
 
 Tool for accessing Oracle DB Package Manager repository
