@@ -1,0 +1,9 @@
+Usage: oradbpm login
+
+Description:
+
+  Login to repository. Stores session cookie in local jar (¯\_(ツ)_/¯)
+
+Examples:
+
+  $ oradbpm login

@@ -1,9 +1,26 @@
-Usage: oradbpm publish
+Usage: oradbpm publish [<folder>] [--tag tag]
 
 Description:
 
-  Some epic info
+  Publish package to repository (as specified in oradbpm_package.json).
+  Fails if package/version already exists in repository.
+
+Options:
+
+  - [<folder>] Publishes package from folder <folder>. If no <folder> is provided, then current directory is used.
+
+  - [--tag <tag>] Publishes package and adds the given tag, such that oradbpm get <name>@<tag> will get this version. By default, oradbpm publish updates and oradbpm get gets the latest tag.
 
 Examples:
 
+  - publish from current directory
   $ oradbpm publish
+
+  - publish from current directory and tag with the tag beta
+  $ oradbpm publish --tag beta
+
+  - publish from relative path
+  $ oradbpm publish some/relative/path
+
+  - publish from absolute path
+  $ oradbpm publish /or/some/absolute/path

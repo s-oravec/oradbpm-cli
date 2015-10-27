@@ -1,1 +1,14 @@
-usage!!!
+Usage: oradbpm <command> [option]
+
+Commands:
+
+  help        - print command help or print this usage help when no command specified.
+  inc-version - increment version in oradbpm_package.json file
+  login       - login to repository
+  logout      - logout from repository
+  publish     - publish package to repository
+  search      - search repository
+  view        - view package info
+  whoami      - show currently logged in account info
+  version     - show oradbpm vesion
+
