@@ -8,7 +8,7 @@ chai.use(chaiAsPromised);
 var repoMock = require('./../../mock/PackageRepositoryService');
 var SimplePackageRepositoryData = require('./../../mock/data/SimplePackageRepository').data;
 
-var PackageDependencyTree = require('../../../lib/oradbpm.client/controller/PackageDependencyTree');
+var PackageDependencyTree = require('../../../lib/oradbpm.client/controller/package/PackageDependencyTree');
 var PackageVersion = require('../../../lib/oradbpm.client/model/PackageVersion');
 
 describe('PackageDependencyTree', function () {
