@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Oracle DB Package Manager CLI",
   "scripts": {
-    "test": "grunt mochaTest"
+    "test": "./node_modules/.bin/grunt test --verbose"
   },
   "repository": {
     "type": "git",
@@ -46,8 +46,9 @@
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
     "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.11.3",
-    "grunt-contrib-watch": "https://github.com/s-oravec/grunt-contrib-watch.git",
+    "grunt-contrib-watch": "git+https://github.com/s-oravec/grunt-contrib-watch.git#master",
     "grunt-mocha-test": "^0.12.7",
     "mocha": "^2.3.3"
   }
