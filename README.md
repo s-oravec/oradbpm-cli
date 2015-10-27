@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/s-oravec/oradbpm-cli.svg?branch=master)](https://travis-ci.org/s-oravec/oradbpm-cli)
 [![bitHound Score](https://www.bithound.io/github/s-oravec/oradbpm-cli/badges/score.svg)](https://www.bithound.io/github/s-oravec/oradbpm-cli)
 [![bitHound Dependencies](https://www.bithound.io/github/s-oravec/oradbpm-cli/badges/dependencies.svg)](https://www.bithound.io/github/s-oravec/oradbpm-cli/master/dependencies/npm)
 
