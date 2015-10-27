@@ -41,6 +41,6 @@ describe('LocalConfigFileService', function () {
         data.should.deep.equal({});
       })
       .should.be.eventually.fulfilled;
-  })
+  });
 
 });
