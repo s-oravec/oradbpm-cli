@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Oracle DB Package Manager CLI",
   "scripts": {
-    "postinstall": "npm link",
     "test": "./node_modules/.bin/grunt test --verbose"
   },
   "repository": {

@@ -24,6 +24,9 @@ describe('inc-version cli', function () {
     shell.exec('git clone ' + git_repo + ' ' + pkg_local, options);
     // copy package to clone
     shell.exec('cp ' + pkg_image + '/oradb_package.json ' + pkg_local, options);
+    // link bin
+    shell.ln('-s','bin/oradbpm.js',pkg_local + '/oradbpm');
+    shell.chmod(700, pkg_local + '/oradbpm');
   });
 
   it('', function () {
