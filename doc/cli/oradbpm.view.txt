@@ -1,0 +1,16 @@
+Usage: oradbpm view <packageName> [version | tag]
+
+Description:
+
+  Displays detailed information about package <packageName> (as of specified version or tag). Default tag is latest.
+
+  - version - semver version
+  - tag - tag
+
+Examples:
+
+  $ oradbpm view pete
+
+  $ oradbpm view pete 1.0.0
+
+  $ oradbpm view pete beta

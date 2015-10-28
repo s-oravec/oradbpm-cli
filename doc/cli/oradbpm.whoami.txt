@@ -1,0 +1,10 @@
+Usage: oradbpm whoami
+
+Description:
+
+  Displays username of user currently logged in into repository
+
+Examples:
+
+  $ oradbpm whoami
+

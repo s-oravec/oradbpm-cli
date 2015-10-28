@@ -1,0 +1,9 @@
+Usage: oradbpm search <query>
+
+Description:
+
+  Search repository. Searches in package name, description, author.
+
+Examples:
+
+  $ oradbpm search pete

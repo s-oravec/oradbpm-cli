@@ -1,0 +1,25 @@
+Usage: oradbpm inc-version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease]
+
+Description:
+
+  Increments version in oradb_package.json and tags and pushes to git repository.
+  For revision definitions see https://github.com/npm/node-semver
+
+Options:
+
+  - [<newversion>] increment to specified version
+  - [major | minor | patch | premajor | preminor | prepatch | prerelease] increment specfied version number
+
+Examples:
+
+  - increment to specified version number
+  $ oradbpm inc-version 1.0.1
+
+  - increment major version number
+  $ oradbpm inc-version major
+
+  - increment patch version number
+  $ oradbpm inc-version patch
+
+  - incerment prerelease version number
+  $ oradbpm inc-version prerelease

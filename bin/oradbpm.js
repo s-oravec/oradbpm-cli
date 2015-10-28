@@ -9,7 +9,7 @@ var cli = new CLI();
 cli
   .parse(process.argv)
   .then(function (parsedArgs) {
-    return cli.executeCommand(parsedArgs);
+    return cli.callCommand(parsedArgs);
   })
   .catch(function (err) {
     debug('error', err.exitCode);
