@@ -2,4 +2,6 @@ language: node_js
 node_js:
   - "0.12"
   - "0.10"
-
+before_install:
+  - git config --global user.email "stefan.oravec@me.com"
+  - git config --global user.name "Štefan Oravec"
