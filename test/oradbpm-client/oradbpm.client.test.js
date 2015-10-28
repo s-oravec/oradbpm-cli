@@ -5,7 +5,7 @@ var chaiAsPromised = require('chai-as-promised');
 chai.should();
 chai.use(chaiAsPromised);
 
-var oraDBPMClient = require('./../../lib/oradbpm.client');
+var oraDBPMClient = require('./../../lib/oradbpm-client.js');
 
 describe('OraDBPMClient', function () {
 

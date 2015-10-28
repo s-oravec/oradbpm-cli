@@ -1,7 +1,7 @@
 'use strict';
 
 var chai = require('chai'),
-  PackageVersionIdentifier = require('../../../lib/oradbpm.client/model/PackageVersionIdentifier');
+  PackageVersionIdentifier = require('../../../lib/oradbpm-client/model/package-version-identifier.model');
 
 chai.should();
 

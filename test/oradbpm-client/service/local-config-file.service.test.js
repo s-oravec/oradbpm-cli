@@ -6,7 +6,7 @@ chai.should();
 chai.use(chaiAsPromised);
 
 var Bluebird = require('bluebird');
-var LocalConfigFileService = require('./../../../lib/oradbpm.client/service/LocalConfigFileService.js');
+var LocalConfigFileService = require('./../../../lib/oradbpm-client/service/local-config-file.service.js');
 var fs = Bluebird.promisifyAll(require('fs'));
 var debug = require('debug')('oradbpm:service:local-config:test');
 
