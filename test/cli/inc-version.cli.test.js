@@ -21,33 +21,40 @@ describe('inc-version cli', function () {
 
   beforeEach(function () {
     // cleanup
-    shell.rm('-rf','test/tmp/inc-version');
+    shell.exec('rm -rf test/tmp/inc-version');
     // create repo
     shell.exec('git init ' + git_repo + ' --bare');
-    // clone from repo
+    // clone local from repo
     shell.exec('git clone ' + git_repo + ' ' + pkg_local);
     // copy package to clone
     shell.exec('cp ' + pkg_image + '/oradb_package.json ' + pkg_local);
+    shell.exec('cp ' + 'test/fixtures/.gitignore ' + pkg_local);
     shell.ln('-s','bin/oradbpm.js',pkg_local + '/oradbpm');
     // link bin
     shell.chmod(700, pkg_local + '/oradbpm');
+    // perform initial commit
     shell.pushd(pkg_local);
+    shell.config.silent = false;
     shell.exec('git add oradb_package.json');
-    shell.exec('git add commit -m "init"');
-    shell.exec('git push');
+    shell.exec('git add .gitignore');
+    shell.exec('git commit -m "init"');
+    shell.exec('git push origin master');
+    shell.config.silent = true;
   });
 
-  it('should inc version, write it to package file, tag working copy and push it to repository', function () {
+  it('should inc version, write it to package file, tag working copy and push it to repository', function (done) {
     var oradb_package_before = require(__dirname + '/../tmp/inc-version/local/oradb_package.json');
     oradb_package_before.version.should.be.equal('0.0.1');
+    shell.config.silent = false;
     shell.exec('./oradbpm inc-version minor', function (code, output) {
-      output.should.be.equal('New package version is 0.1.0.\n');
       return fs.readFileAsync(__dirname + '/../tmp/inc-version/local/oradb_package.json')
         .then(function (content) {
           JSON.parse(content).version.should.be.equal('0.1.0');
         })
-        .should.be.eventually.fulfilled;
+        .should.be.eventually.fulfilled
+        .then(done);
     });
+
   });
 
   afterEach(function () {
