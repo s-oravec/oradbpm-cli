@@ -1,0 +1,13 @@
+{
+  "name": "inc-version",
+  "version": "0.0.1",
+  "description": "inc-version",
+  "repository": {
+    "type": "git",
+    "url": "test/tmp/inc-version/git-repo"
+  },
+  "license": "MIT",
+  "keywords": [
+    "test"
+  ]
+}

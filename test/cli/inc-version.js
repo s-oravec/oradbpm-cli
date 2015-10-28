@@ -27,7 +27,8 @@ describe('inc-version cli', function () {
 
   it('', function () {
     shell.exec('export DEBUG=*');
-    shell.exec('oradbpm inc-version minor');
+
+    shell.exec('pushd ' + pkg_local + ' && oradbpm inc-version minor && popd');
   });
 
 });
