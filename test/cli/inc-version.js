@@ -30,9 +30,8 @@ describe('inc-version cli', function () {
   });
 
   it('', function () {
-    shell.exec('export DEBUG=*');
     shell.pushd(pkg_local, options);
-    stdout = shell.exec('oradbpm inc-version minor').output;
+    stdout = shell.exec('./oradbpm inc-version minor').output;
     var oradb_package = require(__dirname + '/../tmp/inc-version/local/oradb_package.json');
     stdout.should.be.equal('New package version is 0.1.0.\n');
     shell.popd();
