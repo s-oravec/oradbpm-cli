@@ -1,4 +1,4 @@
-Usage: oradbpm inc-version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease]
+Usage: oradbpm inc-version [<newVersio>] | major | minor | patch | premajor | preminor | prepatch | prerelease]
 
 Description:
 
@@ -7,8 +7,8 @@ Description:
 
 Options:
 
-  - [<newversion>] increment to specified version
-  - [major | minor | patch | premajor | preminor | prepatch | prerelease] increment specfied version number
+  - <newversion> increment to specified version
+  - major | minor | patch | premajor | preminor | prepatch | prerelease increment specfied version number
 
 Examples:
 
