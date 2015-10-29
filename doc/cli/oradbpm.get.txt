@@ -1,0 +1,36 @@
+Usage:
+
+  oradbpm get <pkg>
+  oradbpm get <pkg>@<tag>
+  oradbpm get <pkg>@<version>
+  oradbpm get <pkg>@<version range>
+  oradbpm get <git:// url>
+  oradbpm get <github username>/<github project>
+
+Description:
+
+  Get package from it's repository
+
+  o <pkg>                  - latest version of package in repository
+
+  o <pkg>@<tag>            - identified by tag of package in repository
+
+  o <pkg>@<version>        - identified by exact version of package in repository
+
+  o <pkg>@<version range>  - identified by maximum satisfying in the version range (see semver.org)
+
+  o <git:// url>           - url with specified #<commit>
+
+  o <github username>/<github project>
+                           - latest from github
+
+Options:
+
+  - -s --save  save to oradb_package.json as dependency
+  - --save-dev save to oradb_package.json as development dependency
+
+Examples:
+
+  - get latest sqlsn-core
+  $ oradbpm get sqlsn-core
+
