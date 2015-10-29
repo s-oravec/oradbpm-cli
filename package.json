@@ -41,8 +41,7 @@
     "semver": "^5.0.3",
     "shelljs": "^0.5.3",
     "tough-cookie-filestore": "0.0.1",
-    "urlencode": "^1.1.0",
-    "validator": "^4.2.1"
+    "urlencode": "^1.1.0"
   },
   "devDependencies": {
     "chai": "^3.3.0",
