@@ -5,7 +5,7 @@ var chai = require('chai'),
 
 chai.should();
 
-describe.only('PackageDependency', function () {
+describe('PackageDependency', function () {
 
   it('should throw without name passed', function () {
     (function () {
@@ -23,15 +23,6 @@ describe.only('PackageDependency', function () {
   });
 
   it('should throw without version passed', function () {
-    //(function () {
-    //  var x = new PackageDependency('package-name');
-    //}).should.throw();
-    //(function () {
-    //  var x = new PackageDependency('package-name', undefined);
-    //}).should.throw();
-    //(function () {
-    //  var x = new PackageDependency('package-name', null);
-    //}).should.throw();
     (function () {
       var x = new PackageDependency('package-name', {});
     }).should.throw();

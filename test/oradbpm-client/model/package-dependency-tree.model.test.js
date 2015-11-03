@@ -5,11 +5,11 @@ var chaiAsPromised = require('chai-as-promised');
 chai.should();
 chai.use(chaiAsPromised);
 
-var repoMock = require('./../../../mock/PackageRepositoryService');
-var SimplePackageRepositoryData = require('./../../../mock/data/SimplePackageRepository').data;
+var repoMock = require('./../../mock/PackageRepositoryService');
+var SimplePackageRepositoryData = require('./../../mock/data/SimplePackageRepository').data;
 
-var PackageDependencyTree = require('../../../../lib/oradbpm-client/model/dependency-tree.controller.js');
-var PackageVersion = require('../../../../lib/oradbpm-client/model/package-version-definition.model.js');
+var PackageDependencyTree = require('../../../lib/oradbpm-client/model/package-dependency-tree.model.js');
+var PackageVersion = require('../../../lib/oradbpm-client/model/package-version-definition.model.js');
 
 describe.skip('PackageDependencyTree', function () {
 
