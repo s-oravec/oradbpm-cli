@@ -5,7 +5,6 @@ Usage:
   oradbpm get <pkg>@<version>
   oradbpm get <pkg>@<version range>
   oradbpm get <git:// url>
-  oradbpm get <github username>/<github project>
 
 Description:
 
@@ -20,9 +19,6 @@ Description:
   o <pkg>@<version range>  - identified by maximum satisfying in the version range (see semver.org)
 
   o <git:// url>           - url with specified #<commit>
-
-  o <github username>/<github project>
-                           - latest from github
 
 Options:
 
