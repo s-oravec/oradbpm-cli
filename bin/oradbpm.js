@@ -13,9 +13,9 @@ cli
     return cli.callCommand(parsedArgs);
   })
   .catch(function (err) {
-    debug('error', err.exitCode);
-    debug('error', err.name);
-    debug('error', err.message);
+    debug('error %s', err.exitCode);
+    debug('error %s', err.name);
+    debug('error %s', err.message);
     console.log(chalk.red([err.name, err.exitCode, err.message].join(':')));
     process.exit(err.exitCode || 1);
   });

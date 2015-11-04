@@ -1,4 +1,4 @@
-Usage: oradbpm publish [<folder>] [--tag <tag>]
+Usage: oradbpm publish [--oradbpm-dir <folder>] [--tag <tag>]
 
 Description:
 
@@ -7,7 +7,7 @@ Description:
 
 Options:
 
-  - [<folder>]  folder containing package. default is current
+  - [--oradbpm-dir <folder>] folder containing package. default is current
   - [--tag <tag>] add given tag on publish. default is latest
 
 Examples:

@@ -29,7 +29,7 @@ var packageVersionDefinition2 = new PackageVersionDefinition({
   "license": "MIT"
 });
 
-describe.only('DatabaseSchema', function () {
+describe('DatabaseSchema', function () {
   it('constructor should create instance', function () {
     var dbSchema = new DatabaseSchema('PETE_010000');
     // jshint expr: true
