@@ -19,7 +19,7 @@ describe('inc-version cli', function () {
   var pkg_local = 'test/tmp/inc-version/local';
   var pkg_image = 'test/fixtures/packages/inc-version';
 
-  beforeEach(function () {
+  beforeEach(function (done) {
     // cleanup
     shell.exec('rm -rf test/tmp/inc-version');
     // create repo
@@ -40,6 +40,7 @@ describe('inc-version cli', function () {
     shell.exec('git commit -m "init"');
     shell.exec('git push origin master');
     shell.config.silent = true;
+    done();
   });
 
   it('should inc version, write it to package file, tag working copy and push it to repository', function (done) {

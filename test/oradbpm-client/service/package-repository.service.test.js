@@ -5,10 +5,7 @@ var chaiAsPromised = require('chai-as-promised');
 chai.should();
 chai.use(chaiAsPromised);
 
-var Bluebird = require('bluebird');
 var PackageRepositoryService = require('./../../../lib/oradbpm-client/service/package-repository.service.js');
-var fs = Bluebird.promisifyAll(require('fs'));
-var debug = require('debug')('oradbpm:service:package-repository:test');
 
 describe('PackageRepositoryService', function () {
 
@@ -18,7 +15,8 @@ describe('PackageRepositoryService', function () {
     packageRepositoryService = PackageRepositoryService.PackageRepositoryServiceFactory();
   });
 
-  it('should instantiate correctly', function () {
+  it('construcotr should create instance', function () {
+    (packageRepositoryService instanceof PackageRepositoryService).should.be.equal(true);
     packageRepositoryService.should.have.property('search');
     packageRepositoryService.should.have.property('get');
     packageRepositoryService.should.have.property('publish');

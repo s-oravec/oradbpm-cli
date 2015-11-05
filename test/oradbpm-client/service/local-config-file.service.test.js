@@ -18,7 +18,8 @@ describe('LocalConfigFileService', function () {
     localConfigFileService = LocalConfigFileService.LocalConfigFileServiceFactory();
   });
 
-  it('should instantiate correctly', function () {
+  it('constructor creates instance', function () {
+    (localConfigFileService instanceof  LocalConfigFileService).should.be.equal(true);
     localConfigFileService.should.have.property('read');
     localConfigFileService.should.have.property('write');
   });
