@@ -18,14 +18,13 @@ describe('PackageDependencyTreeRoot', function () {
     packageVersionDefinition = new PackageVersionDefinition({
       name: 'anonymous',
       version: '0.0.1',
-      language: "plsql"
+      language: 'plsql'
     });
   });
 
   it('constructor creates instance', function () {
     var dependencyTreeRoot = new PackageDependencyTreeModel.PackageDependencyTreeRoot(packageVersionDefinition);
-    // jshint expr: true
-    (dependencyTreeRoot instanceof PackageDependencyTreeModel.PackageDependencyTreeRoot).should.be.true;
+    (dependencyTreeRoot instanceof PackageDependencyTreeModel.PackageDependencyTreeRoot).should.be.equal(true);
   });
 
 });
@@ -93,8 +92,7 @@ describe('PackageDependencyTreeNode', function () {
   it('constructor creates instance', function () {
     packageDependencyTreeRoot.mergeDependencies([sqlsnCoreDependency], {});
     var dependencyTreeNode = new PackageDependencyTreeModel.PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreDependency, sqlsnCorePackageDefinition);
-    // jshint expr: true
-    (dependencyTreeNode instanceof PackageDependencyTreeModel.PackageDependencyTreeNode).should.be.true;
+    (dependencyTreeNode instanceof PackageDependencyTreeModel.PackageDependencyTreeNode).should.be.equal(true);
   });
 
   it('nearest global of root is root', function () {

@@ -7,35 +7,41 @@ var DatabaseSchema = require('../../../lib/oradbpm-client/model/database-schema.
 var PackageVersionDeployment = require('../../../lib/oradbpm-client/model/package-version-deployment.model');
 var PackageVersionDefinition = require('../../../lib/oradbpm-client/model/package-version-definition.model');
 
-var packageVersionDefinition1 = new PackageVersionDefinition({
-  "name": "db-schema-package-name",
-  "language": "plsql",
-  "version": "0.0.1",
-  "description": "db-schema-package-name",
-  "repository": {
-    "type": "git",
-    "url": "test/tmp/inc-version/git-repo"
-  },
-  "license": "MIT"
-});
-
-var packageVersionDefinition2 = new PackageVersionDefinition({
-  "name": "db-schema-package-name",
-  "language": "plsql",
-  "version": "0.0.2",
-  "description": "db-schema-package-name",
-  "repository": {
-    "type": "git",
-    "url": "test/tmp/inc-version/git-repo"
-  },
-  "license": "MIT"
-});
-
 describe('DatabaseSchema', function () {
+
+  var packageVersionDefinition1;
+  var packageVersionDefinition2;
+
+  before(function () {
+    packageVersionDefinition1 = new PackageVersionDefinition({
+      "name": "db-schema-package-name",
+      "language": "plsql",
+      "version": "0.0.1",
+      "description": "db-schema-package-name",
+      "repository": {
+        "type": "git",
+        "url": "test/tmp/inc-version/git-repo"
+      },
+      "license": "MIT"
+    });
+
+    packageVersionDefinition2 = new PackageVersionDefinition({
+      "name": "db-schema-package-name",
+      "language": "plsql",
+      "version": "0.0.2",
+      "description": "db-schema-package-name",
+      "repository": {
+        "type": "git",
+        "url": "test/tmp/inc-version/git-repo"
+      },
+      "license": "MIT"
+    });
+
+  });
+
   it('constructor should create instance', function () {
     var dbSchema = new DatabaseSchema('pete');
-    // jshint expr: true
-    (dbSchema instanceof DatabaseSchema).should.be.true;
+    (dbSchema instanceof DatabaseSchema).should.be.equal(true);
     dbSchema.schemaNameBase.should.be.equal('pete');
   });
 
