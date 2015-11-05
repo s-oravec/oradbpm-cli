@@ -16,7 +16,6 @@ describe('PackageRepositoryService', function () {
   });
 
   it('construcotr should create instance', function () {
-    (packageRepositoryService instanceof PackageRepositoryService).should.be.equal(true);
     packageRepositoryService.should.have.property('search');
     packageRepositoryService.should.have.property('get');
     packageRepositoryService.should.have.property('publish');
