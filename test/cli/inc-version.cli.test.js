@@ -11,7 +11,7 @@ var shell = require('shelljs');
 
 shell.config.silent = true;
 
-// TODO: nice, nice ... but refactoring for better testability has been done to perform test on controller, not on cli ...
+// TODO: nice, nice ... but refactoring for better testability has been done to perform such a test on controller, not on cli ...
 // TODO: so move test of work done by controller to controller test
 describe('inc-version cli', function () {
 
@@ -54,7 +54,6 @@ describe('inc-version cli', function () {
         .should.be.eventually.fulfilled
         .then(done);
     });
-
   });
 
   afterEach(function () {

@@ -1,0 +1,15 @@
+{
+  "name": "sqlsn-stack",
+  "version": "1.0.0",
+  "language": "sqlplus",
+  "description": "SQLSN Stack",
+  "author": "Štefan Oravec <stefan.oravec@me.com>",
+  "repository": {
+    "type": "git",
+    "url": "test/tmp/sqlsn-stack/git-repo"
+  },
+  "license": "MIT",
+  "keywords": [
+    "sql*plus", "sql", "sqlsn"
+  ]
+}

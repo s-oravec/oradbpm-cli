@@ -9,6 +9,7 @@ var PackageVersionDefinition = require('../../../lib/oradbpm-client/model/packag
 
 var packageVersionDefinition1 = new PackageVersionDefinition({
   "name": "db-schema-package-name",
+  "language": "plsql",
   "version": "0.0.1",
   "description": "db-schema-package-name",
   "repository": {
@@ -20,6 +21,7 @@ var packageVersionDefinition1 = new PackageVersionDefinition({
 
 var packageVersionDefinition2 = new PackageVersionDefinition({
   "name": "db-schema-package-name",
+  "language": "plsql",
   "version": "0.0.2",
   "description": "db-schema-package-name",
   "repository": {
@@ -31,14 +33,14 @@ var packageVersionDefinition2 = new PackageVersionDefinition({
 
 describe('DatabaseSchema', function () {
   it('constructor should create instance', function () {
-    var dbSchema = new DatabaseSchema('PETE_010000');
+    var dbSchema = new DatabaseSchema('pete');
     // jshint expr: true
     (dbSchema instanceof DatabaseSchema).should.be.true;
-    dbSchema.schemaName.should.be.equal('PETE_010000');
+    dbSchema.schemaNameBase.should.be.equal('pete');
   });
 
   it('addProposal should add proposal', function () {
-    var dbSchema = new DatabaseSchema('PETE_010000');
+    var dbSchema = new DatabaseSchema('pete');
     var packageVersionDeployment;
     // first
     packageVersionDeployment = new PackageVersionDeployment(packageVersionDefinition1);
@@ -55,7 +57,7 @@ describe('DatabaseSchema', function () {
   });
 
   it('addResolution should add resolution', function () {
-    var dbSchema = new DatabaseSchema('PETE_010000');
+    var dbSchema = new DatabaseSchema('pete');
     var packageVersionDeployment;
     packageVersionDeployment = new PackageVersionDeployment(packageVersionDefinition1);
     dbSchema.addResolution(packageVersionDeployment);
@@ -64,7 +66,7 @@ describe('DatabaseSchema', function () {
   });
 
   it('second addResolution of same package should replace previous resolution', function () {
-    var dbSchema = new DatabaseSchema('PETE_010000');
+    var dbSchema = new DatabaseSchema('pete');
     var packageVersionDeployment = new PackageVersionDeployment(packageVersionDefinition1);
     // first
     dbSchema.addResolution(packageVersionDeployment);

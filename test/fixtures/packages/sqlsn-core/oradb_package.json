@@ -1,0 +1,17 @@
+{
+  "name": "sqlsn-core",
+  "version": "1.0.0",
+  "language": "sqlplus",
+  "description": "SQLSN Core",
+  "author": "Štefan Oravec <stefan.oravec@me.com>",
+  "repository": {
+    "type": "git",
+    "url": "test/tmp/sqlsn-core/git-repo"
+  },
+  "license": "MIT",
+  "keywords": [
+    "sql*plus",
+    "sql",
+    "sqlsn"
+  ]
+}

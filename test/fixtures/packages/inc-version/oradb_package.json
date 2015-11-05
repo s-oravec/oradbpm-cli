@@ -1,7 +1,9 @@
 {
   "name": "inc-version",
   "version": "0.0.1",
+  "language": "plsql",
   "description": "inc-version",
+  "author": "Štefan Oravec <stefan.oravec@me.com>",
   "repository": {
     "type": "git",
     "url": "test/tmp/inc-version/git-repo"
@@ -9,5 +11,8 @@
   "license": "MIT",
   "keywords": [
     "test"
-  ]
+  ],
+  "dependencies": {
+    "sqlsn-core": "latest"
+  }
 }
