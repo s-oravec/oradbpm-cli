@@ -11,7 +11,7 @@ chai.should();
 
 var CLIError = require('../../lib/cli/error.cli');
 
-describe.only('$ oradbpm help', function () {
+describe('$ oradbpm help', function () {
 
   var help = require('../../lib/cli/help.cli');
   var parsedArgs, stdout;
