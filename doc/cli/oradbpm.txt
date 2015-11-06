@@ -1,5 +1,10 @@
 Usage: oradbpm <command> [option]
 
+Description:
+
+  Oracle Database Package Manager CLI client application.
+  Visit https://github.com/s-oravec/oradbpm-cli for more information.
+
 Commands:
 
   help        - print command help or print this usage help when no command specified.

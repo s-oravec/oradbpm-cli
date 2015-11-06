@@ -41,7 +41,7 @@ describe('DatabaseSchema', function () {
 
   it('constructor should create instance', function () {
     var dbSchema = new DatabaseSchema('pete');
-    (dbSchema instanceof DatabaseSchema).should.be.equal(true);
+    dbSchema.should.be.instanceOf(DatabaseSchema);
     dbSchema.schemaNameBase.should.be.equal('pete');
   });
 

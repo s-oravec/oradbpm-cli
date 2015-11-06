@@ -24,7 +24,7 @@ describe('PackageDependencyTreeRoot', function () {
 
   it('constructor creates instance', function () {
     var dependencyTreeRoot = new PackageDependencyTreeModel.PackageDependencyTreeRoot(packageVersionDefinition);
-    (dependencyTreeRoot instanceof PackageDependencyTreeModel.PackageDependencyTreeRoot).should.be.equal(true);
+    dependencyTreeRoot.should.be.instanceOf(PackageDependencyTreeModel.PackageDependencyTreeRoot);
   });
 
 });
@@ -92,7 +92,7 @@ describe('PackageDependencyTreeNode', function () {
   it('constructor creates instance', function () {
     packageDependencyTreeRoot.mergeDependencies([sqlsnCoreDependency], {});
     var dependencyTreeNode = new PackageDependencyTreeModel.PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreDependency, sqlsnCorePackageDefinition);
-    (dependencyTreeNode instanceof PackageDependencyTreeModel.PackageDependencyTreeNode).should.be.equal(true);
+    dependencyTreeNode.should.be.instanceOf(PackageDependencyTreeModel.PackageDependencyTreeNode);
   });
 
   it('nearest global of root is root', function () {

@@ -13,7 +13,7 @@ describe('PackageVersionDefinition', function () {
       version: '1.0.0',
       language: 'plsql'
     });
-    (packageVersionDefinition instanceof PackageVersionDefinition).should.be.equal(true);
+    packageVersionDefinition.should.be.instanceOf(PackageVersionDefinition);
   });
   
   it('constructor should throw if language is not defined', function () {

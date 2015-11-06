@@ -10,13 +10,13 @@ describe('DeploymentPlan', function () {
 
   it('constructor should create instance', function () {
     var deploymentPlan = new DeploymentPlan();
-    (deploymentPlan instanceof DeploymentPlan).should.be.equal(true);
+    deploymentPlan.should.be.instanceOf(DeploymentPlan);
   });
 
   it('getSchema should return <main> when schemaNameBase not specified', function () {
     var deploymentPlan = new DeploymentPlan();
     var dbSchema = deploymentPlan.getSchema();
-    (dbSchema instanceof DatabaseSchema).should.be.equal(true);
+    dbSchema.should.be.instanceOf(DatabaseSchema);
     dbSchema.schemaNameBase.should.be.equal('<main>');
   });
 
