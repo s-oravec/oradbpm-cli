@@ -9,7 +9,9 @@ chai.use(chaiAsPromised);
 chai.use(sinonChai);
 chai.should();
 
-describe('$ oradbpm help', function () {
+var CLIError = require('../../lib/cli/error.cli');
+
+describe.only('$ oradbpm help', function () {
 
   var help = require('../../lib/cli/help.cli');
   var parsedArgs, stdout;
@@ -24,12 +26,27 @@ describe('$ oradbpm help', function () {
     parsedArgs = { _: []};
   });
 
-  //it('should output usage if no command specified', function () {
-  //  return help(parsedArgs)
-  //    .then(function () {
-  //      process.stdout.write.
-  //    })
-  //    .should.be.eventually.fulfilled;
-  //});
+  it('should output usage if no command specified', function () {
+    return help(parsedArgs)
+      .then(function () {
+        process.stdout.write.lastCall.args.should.match(/Usage:/);
+      })
+      .should.be.eventually.fulfilled;
+  });
+
+  it('should output command help for known command', function () {
+    parsedArgs._.unshift('view');
+    return help(parsedArgs)
+      .then(function () {
+        process.stdout.write.lastCall.args.should.match(/Usage: [\S]+ view/i);
+      })
+      .should.be.eventually.fulfilled;
+  });
+
+  it('should throw CLIError for unknown command', function () {
+    parsedArgs._.unshift('tradaa');
+    return help(parsedArgs)
+      .should.be.rejectedWith(CLIError);
+  });
 
 });
