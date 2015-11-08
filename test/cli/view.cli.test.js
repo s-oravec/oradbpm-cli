@@ -10,7 +10,7 @@ chai.use(chaiAsPromised);
 chai.use(sinonChai);
 chai.should();
 
-describe('search.cli', function () {
+describe('view.cli', function () {
 
   var CLIError = require('../../lib/cli/error.cli');
   var OraDBPMClient = require('../../lib/oradbpm-client');
@@ -20,11 +20,11 @@ describe('search.cli', function () {
     cli = {
       oraDBPMClient: new OraDBPMClient()
     };
-    command = require('../../lib/cli/search.cli');
-    sinon.spy(cli.oraDBPMClient, 'search');
+    command = require('../../lib/cli/view.cli');
+    sinon.spy(cli.oraDBPMClient, 'view');
   });
 
-  it('should call OraDBPMClient.search with query', function () {
+  it('should call OraDBPMClient.view with package name', function () {
     parsedArgs = {_: ['sqlsn-core']};
     return command.call(cli, parsedArgs)
       .catch(function (err) {
@@ -32,11 +32,11 @@ describe('search.cli', function () {
         if (err.name !== 'PackageRepositoryServiceError') throw err;
       })
       .then(function () {
-        cli.oraDBPMClient.search.lastCall.args[0].should.equal('sqlsn-core');
+        cli.oraDBPMClient.view.lastCall.args[0].should.equal('sqlsn-core');
       });
   });
 
-  it('should throw CLIError if no query passed', function () {
+  it('should throw CLIError if no package name passed', function () {
     parsedArgs = {_: []};
     return command.call(cli, parsedArgs)
       .catch(function (err) {
