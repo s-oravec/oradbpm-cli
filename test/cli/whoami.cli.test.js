@@ -10,7 +10,7 @@ chai.use(chaiAsPromised);
 chai.use(sinonChai);
 chai.should();
 
-describe.only('whoami.cli', function () {
+describe('whoami.cli', function () {
 
   var OraDBPMClient = require('../../lib/oradbpm-client');
   var parsedArgs, command, cli;
