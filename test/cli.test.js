@@ -8,6 +8,7 @@ var path = require('path');
 var bin = 'node ' + '"' + path.resolve(path.join(__dirname, '..', 'bin', 'oradbpm.js')) + '"';
 
 describe('$ oradbpm [options] commands', function () {
+  this.timeout(5000);
 
   it('should support no arguments', function () {
     var output = shell.exec(bin + '', {silent: true}).output;
