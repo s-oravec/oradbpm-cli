@@ -14,6 +14,7 @@ shell.config.silent = true;
 // TODO: nice, nice ... but refactoring for better testability has been done to perform such a test on controller, not on cli ...
 // TODO: so move test of work done by controller to controller test
 describe('inc-version cli', function () {
+  this.timeout(5000);
 
   var git_repo = 'test/tmp/inc-version/git-repo';
   var pkg_local = 'test/tmp/inc-version/local';
