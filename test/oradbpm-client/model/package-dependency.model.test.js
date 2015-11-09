@@ -5,7 +5,7 @@ var chai = require('chai'),
 
 chai.should();
 
-describe('PackageDependency', function () {
+describe.only('PackageDependency', function () {
 
   it('should throw without name passed', function () {
     (function () {
