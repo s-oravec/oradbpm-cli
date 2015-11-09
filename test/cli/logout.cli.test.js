@@ -10,7 +10,7 @@ chai.use(chaiAsPromised);
 chai.use(sinonChai);
 chai.should();
 
-describe.only('logout.cli', function () {
+describe('logout.cli', function () {
 
   var OraDBPMClient = require('../../lib/oradbpm-client');
   var parsedArgs, command, cli;
