@@ -17,6 +17,7 @@ var sinon = require('sinon');
 var sinonChai = require('sinon-chai');
 var chaiAsPromised = require('chai-as-promised');
 var path = require('path');
+var OraDBPMClientError = require('../../lib/oradbpm-client/common/error').OraDBPMClientError;
 
 chai.use(chaiAsPromised);
 chai.use(sinonChai);
@@ -77,7 +78,8 @@ function child() {
       console.error('then')
     })
     .catch(function () {
-      // eat all errors
+       // eat OraDBPMClientError errors
+       if (!(err instanceof OraDBPMClientError)) throw err;
     });
     //.finally(function () {
     //  cli.oraDBPMClient.login.called.should.be.equal(true);
