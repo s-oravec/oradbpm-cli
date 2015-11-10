@@ -11,7 +11,7 @@ var PackageDependencyTreeRoot = require('../../../lib/oradbpm-client/model/packa
 var PackageDefinition = require('../../../lib/oradbpm-client/model/package-definition.model.js');
 var PackageDependency = require('../../../lib/oradbpm-client/model/package-dependency.model');
 
-describe.only('DatabaseSchema', function () {
+describe('DatabaseSchema', function () {
 
   var packageDefinition;
   var mainPackageVersionDefinition;
