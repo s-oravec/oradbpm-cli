@@ -5,10 +5,10 @@ var chaiAsPromised = require('chai-as-promised');
 chai.should();
 chai.use(chaiAsPromised);
 
-var PackageDependencyTreeModel = require('../../../lib/oradbpm-client/model/package-dependency-tree.model.js');
-var PackageDependency = require('../../../lib/oradbpm-client/model/package-dependency.model.js');
-var PackageVersionDefinition = require('../../../lib/oradbpm-client/model/package-version-definition.model.js');
-var PackageDefinition = require('../../../lib/oradbpm-client/model/package-definition.model.js');
+var PackageDependencyTreeModel = require('../../../lib/oradbpm-client/model/package-dependency-tree.model');
+var PackageDependency = require('../../../lib/oradbpm-client/model/package-dependency.model');
+var PackageVersionDefinition = require('../../../lib/oradbpm-client/model/package-version-definition.model');
+var PackageDefinition = require('../../../lib/oradbpm-client/model/package-definition.model');
 
 describe('PackageDependencyTreeRoot', function () {
 

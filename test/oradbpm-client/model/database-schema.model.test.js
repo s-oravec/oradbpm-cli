@@ -6,83 +6,102 @@ chai.should();
 var DatabaseSchema = require('../../../lib/oradbpm-client/model/database-schema.model');
 var PackageVersionDeployment = require('../../../lib/oradbpm-client/model/package-version-deployment.model');
 var PackageVersionDefinition = require('../../../lib/oradbpm-client/model/package-version-definition.model');
+var PackageDependencyTreeNode = require('../../../lib/oradbpm-client/model/package-dependency-tree.model').PackageDependencyTreeNode;
+var PackageDependencyTreeRoot = require('../../../lib/oradbpm-client/model/package-dependency-tree.model').PackageDependencyTreeRoot;
+var PackageDefinition = require('../../../lib/oradbpm-client/model/package-definition.model.js');
+var PackageDependency = require('../../../lib/oradbpm-client/model/package-dependency.model');
 
-describe('DatabaseSchema', function () {
+describe.only('DatabaseSchema', function () {
 
-  var packageVersionDefinition1;
-  var packageVersionDefinition2;
+  var packageDefinition;
+  var mainPackageVersionDefinition;
+  var packageDependencyTreeRoot;
 
   before(function () {
-    packageVersionDefinition1 = new PackageVersionDefinition({
-      "name": "db-schema-package-name",
-      "language": "plsql",
-      "version": "0.0.1",
-      "description": "db-schema-package-name",
-      "repository": {
-        "type": "git",
-        "url": "test/tmp/inc-version/git-repo"
+    packageDefinition = new PackageDefinition({
+      name: 'db-schema-package-name',
+      version: '0.0.2',
+      language: 'plsql',
+      tags: {
+        latest: '0.0.2'
       },
-      "license": "MIT"
+      versions: ['0.0.1', '0.0.2'],
+      packageVersionDefinitions: {
+        '0.0.1': {
+          name: 'db-schema-package-name',
+          version: '0.0.1',
+          language: 'plsql'
+        },
+        '0.0.2': {
+          name: 'db-schema-package-name',
+          version: '0.0.2',
+          language: 'plsql'
+        }
+      }
     });
-
-    packageVersionDefinition2 = new PackageVersionDefinition({
-      "name": "db-schema-package-name",
-      "language": "plsql",
-      "version": "0.0.2",
-      "description": "db-schema-package-name",
-      "repository": {
-        "type": "git",
-        "url": "test/tmp/inc-version/git-repo"
-      },
-      "license": "MIT"
-    });
-
   });
 
+  beforeEach(function () {
+    mainPackageVersionDefinition = new PackageVersionDefinition({
+      name: 'anonymous',
+      version: '0.0.1',
+      language: "plsql"
+    });
+    packageDependencyTreeRoot = new PackageDependencyTreeRoot(mainPackageVersionDefinition);
+  });
+
+
   it('constructor should create instance', function () {
-    var dbSchema = new DatabaseSchema('pete');
+    var dbSchema = new DatabaseSchema('pete', '0.0.1');
     dbSchema.should.be.instanceOf(DatabaseSchema);
     dbSchema.schemaNameBase.should.be.equal('pete');
   });
 
   it('addProposal should add proposal', function () {
-    var dbSchema = new DatabaseSchema('pete');
+    var dbSchema = new DatabaseSchema('pete', '0.0.1');
     var packageVersionDeployment;
+    var packageDependency1 = new PackageDependency('db-schema-package-name', '0.0.1');
+    var packageDependency2 = new PackageDependency('db-schema-package-name', '0.0.2');
     // first
-    packageVersionDeployment = new PackageVersionDeployment(packageVersionDefinition1);
+    packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency1, packageDefinition));
     dbSchema.addProposal(packageVersionDeployment);
-    dbSchema.packagesProposal.should.have.ownProperty(packageVersionDeployment.name);
-    dbSchema.packagesProposal[packageVersionDeployment.name].length.should.be.equal(1);
-    dbSchema.packagesProposal[packageVersionDeployment.name][0].should.be.deep.equal(packageVersionDeployment);
+    dbSchema.packagesProposal.should.have.ownProperty(packageVersionDeployment.packageVersionDefinition.name);
+    dbSchema.packagesProposal[packageVersionDeployment.packageVersionDefinition.name].length.should.be.equal(1);
+    dbSchema.packagesProposal[packageVersionDeployment.packageVersionDefinition.name][0].should.be.deep.equal(packageVersionDeployment);
     // second
-    packageVersionDeployment = new PackageVersionDeployment(packageVersionDefinition2);
+    packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency2, packageDefinition));
     dbSchema.addProposal(packageVersionDeployment);
-    dbSchema.packagesProposal.should.have.ownProperty(packageVersionDeployment.name);
-    dbSchema.packagesProposal[packageVersionDeployment.name].length.should.be.equal(2);
-    dbSchema.packagesProposal[packageVersionDeployment.name][1].should.be.deep.equal(packageVersionDeployment);
+    dbSchema.packagesProposal.should.have.ownProperty(packageVersionDeployment.packageVersionDefinition.name);
+    dbSchema.packagesProposal[packageVersionDeployment.packageVersionDefinition.name].length.should.be.equal(2);
+    dbSchema.packagesProposal[packageVersionDeployment.packageVersionDefinition.name][1].should.be.deep.equal(packageVersionDeployment);
   });
 
   it('addResolution should add resolution', function () {
-    var dbSchema = new DatabaseSchema('pete');
+    var dbSchema = new DatabaseSchema('pete', '0.0.1');
     var packageVersionDeployment;
-    packageVersionDeployment = new PackageVersionDeployment(packageVersionDefinition1);
+    var packageDependency1 = new PackageDependency('db-schema-package-name', '0.0.1');
+    //
+    packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency1, packageDefinition));
     dbSchema.addResolution(packageVersionDeployment);
-    dbSchema.packagesResolution.should.have.ownProperty(packageVersionDeployment.name);
-    dbSchema.packagesResolution[packageVersionDeployment.name].should.be.deep.equal(packageVersionDeployment);
+    dbSchema.packagesResolution.should.have.ownProperty(packageVersionDeployment.packageVersionDefinition.name);
+    dbSchema.packagesResolution[packageVersionDeployment.packageVersionDefinition.name].should.be.deep.equal(packageVersionDeployment);
   });
 
   it('second addResolution of same package should replace previous resolution', function () {
-    var dbSchema = new DatabaseSchema('pete');
-    var packageVersionDeployment = new PackageVersionDeployment(packageVersionDefinition1);
+    var dbSchema = new DatabaseSchema('pete', '0.0.1');
+    var packageVersionDeployment;
     // first
+    var packageDependency1 = new PackageDependency('db-schema-package-name', '0.0.1');
+    var packageDependency2 = new PackageDependency('db-schema-package-name', '0.0.2');
+    packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency1, packageDefinition));
     dbSchema.addResolution(packageVersionDeployment);
-    dbSchema.packagesResolution.should.have.ownProperty(packageVersionDeployment.name);
-    dbSchema.packagesResolution[packageVersionDeployment.name].should.be.deep.equal(packageVersionDeployment);
+    dbSchema.packagesResolution.should.have.ownProperty(packageVersionDeployment.packageVersionDefinition.name);
+    dbSchema.packagesResolution[packageVersionDeployment.packageVersionDefinition.name].should.be.deep.equal(packageVersionDeployment);
     // second
-    packageVersionDeployment = new PackageVersionDeployment(packageVersionDefinition2);
+    packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency2, packageDefinition));
     dbSchema.addResolution(packageVersionDeployment);
-    dbSchema.packagesResolution.should.have.ownProperty(packageVersionDeployment.name);
-    dbSchema.packagesResolution[packageVersionDeployment.name].should.be.deep.equal(packageVersionDeployment);
+    dbSchema.packagesResolution.should.have.ownProperty(packageVersionDeployment.packageVersionDefinition.name);
+    dbSchema.packagesResolution[packageVersionDeployment.packageVersionDefinition.name].should.be.deep.equal(packageVersionDeployment);
   });
 
 });

@@ -1,5 +1,5 @@
 {
-  "path": "oradb_modules",
+  "path": ".",
   "packageVersionDefinition": {
     "name": "<main>",
     "version": "0.0.1",
@@ -254,7 +254,7 @@
               }
             }
           },
-          "path": "oradb_modules/pete/sqlsn",
+          "path": "oradb_modules/pete/oradb_modules/sqlsn",
           "children": [
             {
               "dependency": {
@@ -334,7 +334,7 @@
                 "dependencies": {},
                 "parsedDependencies": {}
               },
-              "path": "oradb_modules/pete/sqlsn/sqlsn-core",
+              "path": "oradb_modules/pete/oradb_modules/sqlsn/oradb_modules/sqlsn-core",
               "children": []
             },
             {
@@ -415,7 +415,7 @@
                 "dependencies": {},
                 "parsedDependencies": {}
               },
-              "path": "oradb_modules/pete/sqlsn/sqlsn-run",
+              "path": "oradb_modules/pete/oradb_modules/sqlsn/oradb_modules/sqlsn-run",
               "children": []
             },
             {
@@ -496,7 +496,7 @@
                 "dependencies": {},
                 "parsedDependencies": {}
               },
-              "path": "oradb_modules/pete/sqlsn/sqlsn-stack",
+              "path": "oradb_modules/pete/oradb_modules/sqlsn/oradb_modules/sqlsn-stack",
               "children": []
             }
           ]
