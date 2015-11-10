@@ -29,7 +29,7 @@ describe('PackageDependencyTreeRoot', function () {
 
 });
 
-describe.only('PackageDependencyTreeNode', function () {
+describe('PackageDependencyTreeNode', function () {
 
   var mainPackageVersionDefinition;
   var packageDependencyTreeRoot;
@@ -48,7 +48,7 @@ describe.only('PackageDependencyTreeNode', function () {
         latest: '0.0.1',
         beta:   '0.0.1-beta'
       },
-      versions: ['0.0.1'],
+      versions: ['0.0.1', '0.0.1-beta'],
       packageVersionDefinitions: {
         '0.0.1': {
           name: 'sqlsn-core',
@@ -81,7 +81,7 @@ describe.only('PackageDependencyTreeNode', function () {
         }
       }
     });
-    sqlsnCoreDependency = new PackageDependency('sqlsn-core', '0.0.1', false);
+    sqlsnCoreDependency = new PackageDependency('sqlsn-core', '0.0.1');
     sqlsnCoreLocalDependency = new PackageDependency('sqlsn-core', {version: '0.0.1', local: true});
   });
 
@@ -100,9 +100,9 @@ describe.only('PackageDependencyTreeNode', function () {
     dependencyTreeNode.should.be.instanceOf(PackageDependencyTreeModel.PackageDependencyTreeNode);
   });
 
-  it.only('constructor creates instance with tag dependency', function () {
+  it('constructor creates instance with tag dependency', function () {
     packageDependencyTreeRoot.mergeDependencies([sqlsnCoreDependency], {});
-    var sqlsnCoreBetaDependency = new PackageDependency('sqlsn-core', 'beta', false);
+    var sqlsnCoreBetaDependency = new PackageDependency('sqlsn-core', 'beta');
     var dependencyTreeNode = new PackageDependencyTreeModel.PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreBetaDependency, sqlsnCorePackageDefinition);
     dependencyTreeNode.should.be.instanceOf(PackageDependencyTreeModel.PackageDependencyTreeNode);
     dependencyTreeNode.packageVersionDefinition.version.should.be.equal('0.0.1-beta');
@@ -114,14 +114,14 @@ describe.only('PackageDependencyTreeNode', function () {
   });
 
   it('nearest global of local package is its parent\'s nearest global', function () {
-    sqlsnDependency = new PackageDependency('sqlsn', '0.0.1', false);
+    sqlsnDependency = new PackageDependency('sqlsn', '0.0.1');
     packageDependencyTreeRoot.mergeDependencies([sqlsnDependency], {});
     var sqlsnCoreTreeNode = new PackageDependencyTreeModel.PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreLocalDependency, sqlsnCorePackageDefinition);
     sqlsnCoreTreeNode.getNearestGlobal().should.equal(sqlsnCoreTreeNode.parentNode.getNearestGlobal());
   });
 
   it('nearest global of non-root package is itself', function () {
-    sqlsnDependency = new PackageDependency('sqlsn', '0.0.1', false);
+    sqlsnDependency = new PackageDependency('sqlsn', '0.0.1');
     packageDependencyTreeRoot.mergeDependencies([sqlsnDependency], {});
     var sqlsnCoreTreeNode = new PackageDependencyTreeModel.PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreDependency, sqlsnCorePackageDefinition);
     sqlsnCoreTreeNode.getNearestGlobal().should.equal(sqlsnCoreTreeNode);

@@ -1,0 +1,507 @@
+{
+  "path": "oradb_modules",
+  "packageVersionDefinition": {
+    "name": "<main>",
+    "version": "0.0.1",
+    "language": "plsql",
+    "keywords": [],
+    "maintainers": {},
+    "dependencies": {},
+    "parsedDependencies": {
+      "pete": {
+        "local": false,
+        "type": "tag",
+        "name": "pete",
+        "tag": "latest"
+      }
+    }
+  },
+  "children": [
+    {
+      "dependency": {
+        "local": false,
+        "type": "tag",
+        "name": "pete",
+        "tag": "latest"
+      },
+      "packageDefinition": {
+        "dependencies": {
+          "sqlsn": "1.0.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "test/tmp/pete/git-repo"
+        },
+        "time": {
+          "modified": 1447158815957,
+          "created": 1447158815957,
+          "1.0.0": 1447158815957
+        },
+        "packageVersionDefinitions": {
+          "1.0.0": {
+            "maintainers": [
+              "stiivo <stefan.oravec@me.com>"
+            ],
+            "name": "pete",
+            "version": "1.0.0",
+            "license": "MIT",
+            "keywords": [
+              "plsql",
+              "test",
+              "tdd"
+            ],
+            "publisher": "stiivo <stefan.oravec@me.com>",
+            "created": 1447158815957,
+            "dependencies": {
+              "sqlsn": "1.0.0"
+            },
+            "language": "plsql",
+            "parsedDependencies": {
+              "sqlsn": {
+                "name": "sqlsn",
+                "version": "1.0.0",
+                "local": false,
+                "type": "version",
+                "versionLiteral": "1.0.0"
+              }
+            }
+          }
+        },
+        "tags": {
+          "latest": "1.0.0"
+        },
+        "notes": "",
+        "keywords": [
+          "plsql",
+          "test",
+          "tdd"
+        ],
+        "license": "MIT",
+        "version": "1.0.0",
+        "author": "Stefan Oravec <stefan.oravec@me.com>",
+        "maintainers": [
+          "stiivo <stefan.oravec@me.com>"
+        ],
+        "versions": [
+          "1.0.0"
+        ],
+        "description": "PL/SQL Testing Engine",
+        "name": "pete",
+        "language": "plsql"
+      },
+      "packageVersionDefinition": {
+        "maintainers": [
+          "stiivo <stefan.oravec@me.com>"
+        ],
+        "name": "pete",
+        "version": "1.0.0",
+        "license": "MIT",
+        "keywords": [
+          "plsql",
+          "test",
+          "tdd"
+        ],
+        "publisher": "stiivo <stefan.oravec@me.com>",
+        "created": 1447158815957,
+        "dependencies": {
+          "sqlsn": "1.0.0"
+        },
+        "language": "plsql",
+        "parsedDependencies": {
+          "sqlsn": {
+            "name": "sqlsn",
+            "version": "1.0.0",
+            "local": false,
+            "type": "version",
+            "versionLiteral": "1.0.0"
+          }
+        }
+      },
+      "path": "oradb_modules/pete",
+      "children": [
+        {
+          "dependency": {
+            "name": "sqlsn",
+            "version": "1.0.0",
+            "local": false,
+            "type": "version",
+            "versionLiteral": "1.0.0"
+          },
+          "packageDefinition": {
+            "dependencies": {
+              "sqlsn-core": "1.0.0",
+              "sqlsn-run": "1.0.0",
+              "sqlsn-stack": "1.0.0"
+            },
+            "repository": {
+              "type": "git",
+              "url": "test/tmp/sqlsn/git-repo"
+            },
+            "time": {
+              "modified": 1447158815386,
+              "created": 1447158815386,
+              "1.0.0": 1447158815386
+            },
+            "packageVersionDefinitions": {
+              "1.0.0": {
+                "maintainers": [
+                  "stiivo <stefan.oravec@me.com>"
+                ],
+                "name": "sqlsn",
+                "version": "1.0.0",
+                "license": "MIT",
+                "keywords": [
+                  "sql*plus",
+                  "sql",
+                  "sqlsn"
+                ],
+                "publisher": "stiivo <stefan.oravec@me.com>",
+                "created": 1447158815386,
+                "dependencies": {
+                  "sqlsn-core": "1.0.0",
+                  "sqlsn-run": "1.0.0",
+                  "sqlsn-stack": "1.0.0"
+                },
+                "language": "sqlplus",
+                "parsedDependencies": {
+                  "sqlsn-core": {
+                    "name": "sqlsn-core",
+                    "version": "1.0.0",
+                    "local": false,
+                    "type": "version",
+                    "versionLiteral": "1.0.0"
+                  },
+                  "sqlsn-run": {
+                    "name": "sqlsn-run",
+                    "version": "1.0.0",
+                    "local": false,
+                    "type": "version",
+                    "versionLiteral": "1.0.0"
+                  },
+                  "sqlsn-stack": {
+                    "name": "sqlsn-stack",
+                    "version": "1.0.0",
+                    "local": false,
+                    "type": "version",
+                    "versionLiteral": "1.0.0"
+                  }
+                }
+              }
+            },
+            "tags": {
+              "latest": "1.0.0"
+            },
+            "notes": "",
+            "keywords": [
+              "sql*plus",
+              "sql",
+              "sqlsn"
+            ],
+            "license": "MIT",
+            "version": "1.0.0",
+            "author": "Stefan Oravec <stefan.oravec@me.com>",
+            "maintainers": [
+              "stiivo <stefan.oravec@me.com>"
+            ],
+            "versions": [
+              "1.0.0"
+            ],
+            "description": "SQLSN",
+            "name": "sqlsn",
+            "language": "sqlplus"
+          },
+          "packageVersionDefinition": {
+            "maintainers": [
+              "stiivo <stefan.oravec@me.com>"
+            ],
+            "name": "sqlsn",
+            "version": "1.0.0",
+            "license": "MIT",
+            "keywords": [
+              "sql*plus",
+              "sql",
+              "sqlsn"
+            ],
+            "publisher": "stiivo <stefan.oravec@me.com>",
+            "created": 1447158815386,
+            "dependencies": {
+              "sqlsn-core": "1.0.0",
+              "sqlsn-run": "1.0.0",
+              "sqlsn-stack": "1.0.0"
+            },
+            "language": "sqlplus",
+            "parsedDependencies": {
+              "sqlsn-core": {
+                "name": "sqlsn-core",
+                "version": "1.0.0",
+                "local": false,
+                "type": "version",
+                "versionLiteral": "1.0.0"
+              },
+              "sqlsn-run": {
+                "name": "sqlsn-run",
+                "version": "1.0.0",
+                "local": false,
+                "type": "version",
+                "versionLiteral": "1.0.0"
+              },
+              "sqlsn-stack": {
+                "name": "sqlsn-stack",
+                "version": "1.0.0",
+                "local": false,
+                "type": "version",
+                "versionLiteral": "1.0.0"
+              }
+            }
+          },
+          "path": "oradb_modules/pete/sqlsn",
+          "children": [
+            {
+              "dependency": {
+                "name": "sqlsn-core",
+                "version": "1.0.0",
+                "local": false,
+                "type": "version",
+                "versionLiteral": "1.0.0"
+              },
+              "packageDefinition": {
+                "repository": {
+                  "type": "git",
+                  "url": "test/tmp/sqlsn-core/git-repo"
+                },
+                "time": {
+                  "modified": 1447158813684,
+                  "created": 1447158813684,
+                  "1.0.0": 1447158813684
+                },
+                "packageVersionDefinitions": {
+                  "1.0.0": {
+                    "maintainers": [
+                      "stiivo <stefan.oravec@me.com>"
+                    ],
+                    "name": "sqlsn-core",
+                    "version": "1.0.0",
+                    "license": "MIT",
+                    "keywords": [
+                      "sql*plus",
+                      "sql",
+                      "sqlsn"
+                    ],
+                    "publisher": "stiivo <stefan.oravec@me.com>",
+                    "created": 1447158813684,
+                    "language": "sqlplus",
+                    "dependencies": {},
+                    "parsedDependencies": {}
+                  }
+                },
+                "tags": {
+                  "latest": "1.0.0"
+                },
+                "notes": "",
+                "keywords": [
+                  "sql*plus",
+                  "sql",
+                  "sqlsn"
+                ],
+                "license": "MIT",
+                "version": "1.0.0",
+                "author": "Stefan Oravec <stefan.oravec@me.com>",
+                "maintainers": [
+                  "stiivo <stefan.oravec@me.com>"
+                ],
+                "versions": [
+                  "1.0.0"
+                ],
+                "description": "SQLSN Core",
+                "name": "sqlsn-core",
+                "language": "sqlplus"
+              },
+              "packageVersionDefinition": {
+                "maintainers": [
+                  "stiivo <stefan.oravec@me.com>"
+                ],
+                "name": "sqlsn-core",
+                "version": "1.0.0",
+                "license": "MIT",
+                "keywords": [
+                  "sql*plus",
+                  "sql",
+                  "sqlsn"
+                ],
+                "publisher": "stiivo <stefan.oravec@me.com>",
+                "created": 1447158813684,
+                "language": "sqlplus",
+                "dependencies": {},
+                "parsedDependencies": {}
+              },
+              "path": "oradb_modules/pete/sqlsn/sqlsn-core",
+              "children": []
+            },
+            {
+              "dependency": {
+                "name": "sqlsn-run",
+                "version": "1.0.0",
+                "local": false,
+                "type": "version",
+                "versionLiteral": "1.0.0"
+              },
+              "packageDefinition": {
+                "repository": {
+                  "type": "git",
+                  "url": "test/tmp/sqlsn-run/git-repo"
+                },
+                "time": {
+                  "modified": 1447158814825,
+                  "created": 1447158814825,
+                  "1.0.0": 1447158814825
+                },
+                "packageVersionDefinitions": {
+                  "1.0.0": {
+                    "maintainers": [
+                      "stiivo <stefan.oravec@me.com>"
+                    ],
+                    "name": "sqlsn-run",
+                    "version": "1.0.0",
+                    "license": "MIT",
+                    "keywords": [
+                      "sql*plus",
+                      "sql",
+                      "sqlsn"
+                    ],
+                    "publisher": "stiivo <stefan.oravec@me.com>",
+                    "created": 1447158814825,
+                    "language": "sqlplus",
+                    "dependencies": {},
+                    "parsedDependencies": {}
+                  }
+                },
+                "tags": {
+                  "latest": "1.0.0"
+                },
+                "notes": "",
+                "keywords": [
+                  "sql*plus",
+                  "sql",
+                  "sqlsn"
+                ],
+                "license": "MIT",
+                "version": "1.0.0",
+                "author": "Stefan Oravec <stefan.oravec@me.com>",
+                "maintainers": [
+                  "stiivo <stefan.oravec@me.com>"
+                ],
+                "versions": [
+                  "1.0.0"
+                ],
+                "description": "SQLSN Run",
+                "name": "sqlsn-run",
+                "language": "sqlplus"
+              },
+              "packageVersionDefinition": {
+                "maintainers": [
+                  "stiivo <stefan.oravec@me.com>"
+                ],
+                "name": "sqlsn-run",
+                "version": "1.0.0",
+                "license": "MIT",
+                "keywords": [
+                  "sql*plus",
+                  "sql",
+                  "sqlsn"
+                ],
+                "publisher": "stiivo <stefan.oravec@me.com>",
+                "created": 1447158814825,
+                "language": "sqlplus",
+                "dependencies": {},
+                "parsedDependencies": {}
+              },
+              "path": "oradb_modules/pete/sqlsn/sqlsn-run",
+              "children": []
+            },
+            {
+              "dependency": {
+                "name": "sqlsn-stack",
+                "version": "1.0.0",
+                "local": false,
+                "type": "version",
+                "versionLiteral": "1.0.0"
+              },
+              "packageDefinition": {
+                "repository": {
+                  "type": "git",
+                  "url": "test/tmp/sqlsn-stack/git-repo"
+                },
+                "time": {
+                  "modified": 1447158814259,
+                  "created": 1447158814259,
+                  "1.0.0": 1447158814259
+                },
+                "packageVersionDefinitions": {
+                  "1.0.0": {
+                    "maintainers": [
+                      "stiivo <stefan.oravec@me.com>"
+                    ],
+                    "name": "sqlsn-stack",
+                    "version": "1.0.0",
+                    "license": "MIT",
+                    "keywords": [
+                      "sql*plus",
+                      "sql",
+                      "sqlsn"
+                    ],
+                    "publisher": "stiivo <stefan.oravec@me.com>",
+                    "created": 1447158814259,
+                    "language": "sqlplus",
+                    "dependencies": {},
+                    "parsedDependencies": {}
+                  }
+                },
+                "tags": {
+                  "latest": "1.0.0"
+                },
+                "notes": "",
+                "keywords": [
+                  "sql*plus",
+                  "sql",
+                  "sqlsn"
+                ],
+                "license": "MIT",
+                "version": "1.0.0",
+                "author": "Stefan Oravec <stefan.oravec@me.com>",
+                "maintainers": [
+                  "stiivo <stefan.oravec@me.com>"
+                ],
+                "versions": [
+                  "1.0.0"
+                ],
+                "description": "SQLSN Stack",
+                "name": "sqlsn-stack",
+                "language": "sqlplus"
+              },
+              "packageVersionDefinition": {
+                "maintainers": [
+                  "stiivo <stefan.oravec@me.com>"
+                ],
+                "name": "sqlsn-stack",
+                "version": "1.0.0",
+                "license": "MIT",
+                "keywords": [
+                  "sql*plus",
+                  "sql",
+                  "sqlsn"
+                ],
+                "publisher": "stiivo <stefan.oravec@me.com>",
+                "created": 1447158814259,
+                "language": "sqlplus",
+                "dependencies": {},
+                "parsedDependencies": {}
+              },
+              "path": "oradb_modules/pete/sqlsn/sqlsn-stack",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "mainPackageSchema": {
+    "schemaNameBase": "<main>",
+    "packagesProposal": {},
+    "packagesResolution": {}
+  },
+  "schemas": {
+    "sqlsn-core": {
+      "1.0.0": {
+        "schemaNameBase": "sqlsn-core",
+        "version": "1.0.0",
+        "packagesProposal": {
+          "sqlsn-core": [
+            {
+              "name": "sqlsn-core",
+              "version": "1.0.0",
+              "maintainers": [
+                "stiivo <stefan.oravec@me.com>"
+              ],
+              "license": "MIT",
+              "keywords": [
+                "sql*plus",
+                "sql",
+                "sqlsn"
+              ],
+              "publisher": "stiivo <stefan.oravec@me.com>",
+              "created": "2015-11-05T15:15:06.321Z",
+              "language": "sqlplus",
+              "dependencies": {},
+              "parsedDependencies": {},
+              "dependency": {
+                "local": false,
+                "type": "tag",
+                "name": "sqlsn-core",
+                "tag": "latest"
+              }
+            }
+          ]
+        },
+        "packagesResolution": {}
+      }
+    }
+  }
+}

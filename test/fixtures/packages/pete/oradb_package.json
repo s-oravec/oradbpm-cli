@@ -1,0 +1,20 @@
+{
+  "name": "pete",
+  "version": "1.0.0",
+  "language": "plsql",
+  "description": "PL/SQL Testing Engine",
+  "author": "Štefan Oravec <stefan.oravec@me.com>",
+  "repository": {
+    "type": "git",
+    "url": "test/tmp/pete/git-repo"
+  },
+  "license": "MIT",
+  "keywords": [
+    "plsql",
+    "test",
+    "tdd"
+  ],
+  "dependencies": {
+    "sqlsn": "1.0.0"
+  }
+}
