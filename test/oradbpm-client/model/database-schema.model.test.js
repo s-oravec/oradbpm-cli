@@ -104,5 +104,22 @@ describe('DatabaseSchema', function () {
     dbSchema.packagesResolution[packageVersionDeployment.packageVersionDefinition.name].should.be.deep.equal(packageVersionDeployment);
   });
 
+  it('resolveConflicts without options should resolve with latest', function () {
+    var dbSchema = new DatabaseSchema('pete', '0.0.1');
+    var packageVersionDeployment;
+    var packageDependency1 = new PackageDependency('db-schema-package-name', '0.0.1');
+    var packageDependency2 = new PackageDependency('db-schema-package-name', '0.0.2');
+    // first
+    packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency1, packageDefinition));
+    dbSchema.addProposal(packageVersionDeployment);
+    // second
+    packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency2, packageDefinition));
+    dbSchema.addProposal(packageVersionDeployment);
+    //
+    dbSchema.resolveConflicts();
+    //
+    dbSchema.packagesResolution['db-schema-package-name'].packageVersionDefinition.version.should.equal('0.0.2')
+  });
+
 });
 
