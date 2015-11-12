@@ -37,7 +37,7 @@
     "lodash": "^3.10.1",
     "minimist": "^1.2.0",
     "prettyjson": "^1.1.3",
-    "promise-while": "^1.0.1",
+    "promise-while": "git+https://github.com/s-oravec/promise-while.git#master",
     "queue-fifo": "^0.2.1",
     "read": "^1.0.7",
     "request-promise": "^1.0.0",

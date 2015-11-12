@@ -118,7 +118,7 @@ describe('DatabaseSchema', function () {
     //
     dbSchema.resolveConflicts();
     //
-    dbSchema.packagesResolution['db-schema-package-name'].packageVersionDefinition.version.should.equal('0.0.2')
+    dbSchema.packagesResolution['db-schema-package-name'].packageVersionDefinition.version.should.equal('0.0.2');
   });
 
 });
