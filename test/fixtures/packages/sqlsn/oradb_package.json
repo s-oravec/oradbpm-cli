@@ -15,8 +15,8 @@
     "sqlsn"
   ],
   "dependencies": {
-    "sqlsn-core": "1.0.0",
-    "sqlsn-run": "1.0.0",
-    "sqlsn-stack": "1.0.0"
+    "sqlsn_core": "1.0.0",
+    "sqlsn_run": "1.0.0",
+    "sqlsn_stack": "1.0.0"
   }
 }

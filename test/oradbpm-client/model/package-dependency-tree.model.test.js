@@ -18,6 +18,8 @@ describe('PackageDependencyTreeRoot', function () {
     packageVersionDefinition = new PackageVersionDefinition({
       name: 'anonymous',
       version: '0.0.1',
+      description: "some package",
+      license: "MIT",
       language: 'plsql'
     });
   });
@@ -41,9 +43,11 @@ describe('PackageDependencyTreeNode', function () {
 
   before(function () {
     sqlsnCorePackageDefinition = new PackageDefinition({
-      name: 'sqlsn-core',
+      name: 'sqlsn_core',
       version: '0.0.1',
       language: 'sqlplus',
+      description: "some package",
+      license: "MIT",
       tags: {
         latest: '0.0.1',
         beta:   '0.0.1-beta'
@@ -51,13 +55,17 @@ describe('PackageDependencyTreeNode', function () {
       versions: ['0.0.1', '0.0.1-beta'],
       packageVersionDefinitions: {
         '0.0.1': {
-          name: 'sqlsn-core',
+          name: 'sqlsn_core',
           version: '0.0.1',
+          description: "some package",
+          license: "MIT",
           language: 'sqlplus'
         },
         '0.0.1-beta': {
-          name: 'sqlsn-core',
+          name: 'sqlsn_core',
           version: '0.0.1-beta',
+          description: "some package",
+          license: "MIT",
           language: 'sqlplus'
         }
       }
@@ -66,6 +74,8 @@ describe('PackageDependencyTreeNode', function () {
       name: 'sqlsn',
       version: '0.0.1',
       language: 'sqlplus',
+      description: "some package",
+      license: "MIT",
       tags: {
         latest: '0.0.1'
       },
@@ -74,21 +84,25 @@ describe('PackageDependencyTreeNode', function () {
         '0.0.1': {
           name: 'sqlsn',
           version: '0.0.1',
+          description: "some package",
+          license: "MIT",
           language: 'sqlplus',
           dependencies: {
-            'sqlsn-core' : '0.0.1'
+            'sqlsn_core' : '0.0.1'
           }
         }
       }
     });
-    sqlsnCoreDependency = new PackageDependency('sqlsn-core', '0.0.1');
-    sqlsnCoreLocalDependency = new PackageDependency('sqlsn-core', {version: '0.0.1', local: true});
+    sqlsnCoreDependency = new PackageDependency('sqlsn_core', '0.0.1');
+    sqlsnCoreLocalDependency = new PackageDependency('sqlsn_core', {version: '0.0.1', local: true});
   });
 
   beforeEach(function () {
     mainPackageVersionDefinition = new PackageVersionDefinition({
       name: 'anonymous',
       version: '0.0.1',
+      description: "some package",
+      license: "MIT",
       language: "plsql"
     });
     packageDependencyTreeRoot = new PackageDependencyTreeModel.PackageDependencyTreeRoot(mainPackageVersionDefinition);
@@ -102,7 +116,7 @@ describe('PackageDependencyTreeNode', function () {
 
   it('constructor creates instance with tag dependency', function () {
     packageDependencyTreeRoot.mergeDependencies([sqlsnCoreDependency], {});
-    var sqlsnCoreBetaDependency = new PackageDependency('sqlsn-core', 'beta');
+    var sqlsnCoreBetaDependency = new PackageDependency('sqlsn_core', 'beta');
     var dependencyTreeNode = new PackageDependencyTreeModel.PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreBetaDependency, sqlsnCorePackageDefinition);
     dependencyTreeNode.should.be.instanceOf(PackageDependencyTreeModel.PackageDependencyTreeNode);
     dependencyTreeNode.packageVersionDefinition.version.should.be.equal('0.0.1-beta');

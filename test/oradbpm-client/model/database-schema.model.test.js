@@ -19,23 +19,29 @@ describe('DatabaseSchema', function () {
 
   before(function () {
     packageDefinition = new PackageDefinition({
-      name: 'db-schema-package-name',
+      name: 'db_schema_package_name',
       version: '0.0.2',
       language: 'plsql',
+      description: "some package",
+      license: "MIT",
       tags: {
         latest: '0.0.2'
       },
       versions: ['0.0.1', '0.0.2'],
       packageVersionDefinitions: {
         '0.0.1': {
-          name: 'db-schema-package-name',
+          name: 'db_schema_package_name',
           version: '0.0.1',
-          language: 'plsql'
+          language: 'plsql',
+          description: "some package",
+          license: "MIT"
         },
         '0.0.2': {
-          name: 'db-schema-package-name',
+          name: 'db_schema_package_name',
           version: '0.0.2',
-          language: 'plsql'
+          language: 'plsql',
+          description: "some package",
+          license: "MIT"
         }
       }
     });
@@ -45,7 +51,9 @@ describe('DatabaseSchema', function () {
     mainPackageVersionDefinition = new PackageVersionDefinition({
       name: 'anonymous',
       version: '0.0.1',
-      language: "plsql"
+      language: "plsql",
+      description: "some package",
+      license: "MIT"
     });
     packageDependencyTreeRoot = new PackageDependencyTreeRoot(mainPackageVersionDefinition);
   });
@@ -60,8 +68,8 @@ describe('DatabaseSchema', function () {
   it('addProposal should add proposal', function () {
     var dbSchema = new DatabaseSchema('pete', '0.0.1');
     var packageVersionDeployment;
-    var packageDependency1 = new PackageDependency('db-schema-package-name', '0.0.1');
-    var packageDependency2 = new PackageDependency('db-schema-package-name', '0.0.2');
+    var packageDependency1 = new PackageDependency('db_schema_package_name', '0.0.1');
+    var packageDependency2 = new PackageDependency('db_schema_package_name', '0.0.2');
     // first
     packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency1, packageDefinition));
     dbSchema.addProposal(packageVersionDeployment);
@@ -79,7 +87,7 @@ describe('DatabaseSchema', function () {
   it('addResolution should add resolution', function () {
     var dbSchema = new DatabaseSchema('pete', '0.0.1');
     var packageVersionDeployment;
-    var packageDependency1 = new PackageDependency('db-schema-package-name', '0.0.1');
+    var packageDependency1 = new PackageDependency('db_schema_package_name', '0.0.1');
     //
     packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency1, packageDefinition));
     dbSchema.addResolution(packageVersionDeployment);
@@ -91,8 +99,8 @@ describe('DatabaseSchema', function () {
     var dbSchema = new DatabaseSchema('pete', '0.0.1');
     var packageVersionDeployment;
     // first
-    var packageDependency1 = new PackageDependency('db-schema-package-name', '0.0.1');
-    var packageDependency2 = new PackageDependency('db-schema-package-name', '0.0.2');
+    var packageDependency1 = new PackageDependency('db_schema_package_name', '0.0.1');
+    var packageDependency2 = new PackageDependency('db_schema_package_name', '0.0.2');
     packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency1, packageDefinition));
     dbSchema.addResolution(packageVersionDeployment);
     dbSchema.packagesResolution.should.have.ownProperty(packageVersionDeployment.packageVersionDefinition.name);
@@ -107,8 +115,8 @@ describe('DatabaseSchema', function () {
   it('resolveConflicts without options should resolve with latest', function () {
     var dbSchema = new DatabaseSchema('pete', '0.0.1');
     var packageVersionDeployment;
-    var packageDependency1 = new PackageDependency('db-schema-package-name', '0.0.1');
-    var packageDependency2 = new PackageDependency('db-schema-package-name', '0.0.2');
+    var packageDependency1 = new PackageDependency('db_schema_package_name', '0.0.1');
+    var packageDependency2 = new PackageDependency('db_schema_package_name', '0.0.2');
     // first
     packageVersionDeployment = new PackageVersionDeployment(new PackageDependencyTreeNode(packageDependencyTreeRoot, packageDependency1, packageDefinition));
     dbSchema.addProposal(packageVersionDeployment);
@@ -118,7 +126,7 @@ describe('DatabaseSchema', function () {
     //
     dbSchema.resolveConflicts();
     //
-    dbSchema.packagesResolution['db-schema-package-name'].packageVersionDefinition.version.should.equal('0.0.2');
+    dbSchema.packagesResolution['db_schema_package_name'].packageVersionDefinition.version.should.equal('0.0.2');
   });
 
 });

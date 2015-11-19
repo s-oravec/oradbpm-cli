@@ -1,5 +1,5 @@
 {
-  "name": "sqlsn-stack",
+  "name": "sqlsn_stack",
   "version": "1.0.0",
   "language": "sqlplus",
   "description": "SQLSN Stack",

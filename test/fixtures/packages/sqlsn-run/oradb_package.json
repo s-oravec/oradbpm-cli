@@ -1,5 +1,5 @@
 {
-  "name": "sqlsn-run",
+  "name": "sqlsn_run",
   "version": "1.0.0",
   "language": "sqlplus",
   "description": "SQLSN Run",

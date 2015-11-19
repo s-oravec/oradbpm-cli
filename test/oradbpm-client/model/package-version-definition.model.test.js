@@ -9,8 +9,10 @@ describe('PackageVersionDefinition', function () {
 
   it('constructor should create instance', function () {
     var packageVersionDefinition = new PackageVersionDefinition({
-      name: 'package-name',
+      name: 'package_name',
       version: '1.0.0',
+      description: "some package",
+      license: "MIT",
       language: 'plsql'
     });
     packageVersionDefinition.should.be.instanceOf(PackageVersionDefinition);
@@ -20,7 +22,9 @@ describe('PackageVersionDefinition', function () {
     (function () {
       new PackageVersionDefinition({
         name: 'package',
-        version: '1.0.0'
+        version: '1.0.0',
+        description: "some package",
+        license: "MIT"
       });
     }).should.throw();
   });
@@ -29,6 +33,8 @@ describe('PackageVersionDefinition', function () {
     (function () {
       new PackageVersionDefinition({
         name: 'package',
+        description: "some package",
+        license: "MIT",
         language: 'sqlplus'
       });
     }).should.throw();
@@ -39,6 +45,8 @@ describe('PackageVersionDefinition', function () {
       new PackageVersionDefinition({
         name: 'package',
         language: 'sqlplus',
+        description: "some package",
+        license: "MIT",
         version: '1.0.0.0'
       });
     }).should.throw();

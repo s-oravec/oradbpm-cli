@@ -1,5 +1,5 @@
 {
-  "name": "sqlsn-core",
+  "name": "sqlsn_core",
   "version": "1.0.0",
   "language": "sqlplus",
   "description": "SQLSN Core",

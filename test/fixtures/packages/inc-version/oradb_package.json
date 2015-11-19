@@ -1,5 +1,5 @@
 {
-  "name": "inc-version",
+  "name": "inc_version",
   "version": "0.0.1",
   "language": "plsql",
   "description": "inc-version",
@@ -13,6 +13,6 @@
     "test"
   ],
   "dependencies": {
-    "sqlsn-core": "latest"
+    "sqlsn_core": "*"
   }
 }

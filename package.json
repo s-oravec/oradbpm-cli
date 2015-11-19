@@ -36,6 +36,7 @@
     "git-url-parse": "^4.0.0",
     "lodash": "^3.10.1",
     "minimist": "^1.2.0",
+    "oradbpm-package-schema": "0.0.1",
     "prettyjson": "^1.1.3",
     "promise-while": "git+https://github.com/s-oravec/promise-while.git#master",
     "queue-fifo": "^0.2.1",
