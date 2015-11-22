@@ -5,7 +5,8 @@ var chaiAsPromised = require('chai-as-promised');
 chai.should();
 chai.use(chaiAsPromised);
 
-var PackageDependencyTreeModel = require('../../../lib/oradbpm-client/model/package-dependency-tree.model');
+var PackageDependencyTreeNode = require('../../../lib/oradbpm-client/model/package-dependency-tree-node.model');
+var PackageDependencyTreeRoot = require('../../../lib/oradbpm-client/model/package-dependency-tree-root.model');
 var PackageDependency = require('../../../lib/oradbpm-client/model/package-dependency.model');
 var PackageVersionDefinition = require('../../../lib/oradbpm-client/model/package-version-definition.model');
 var PackageDefinition = require('../../../lib/oradbpm-client/model/package-definition.model');
@@ -25,8 +26,8 @@ describe('PackageDependencyTreeRoot', function () {
   });
 
   it('constructor creates instance', function () {
-    var dependencyTreeRoot = new PackageDependencyTreeModel.PackageDependencyTreeRoot(packageVersionDefinition);
-    dependencyTreeRoot.should.be.instanceOf(PackageDependencyTreeModel.PackageDependencyTreeRoot);
+    var dependencyTreeRoot = new PackageDependencyTreeRoot(packageVersionDefinition);
+    dependencyTreeRoot.should.be.instanceOf(PackageDependencyTreeRoot);
   });
 
 });
@@ -105,20 +106,20 @@ describe('PackageDependencyTreeNode', function () {
       license: "MIT",
       language: "plsql"
     });
-    packageDependencyTreeRoot = new PackageDependencyTreeModel.PackageDependencyTreeRoot(mainPackageVersionDefinition);
+    packageDependencyTreeRoot = new PackageDependencyTreeRoot(mainPackageVersionDefinition);
   });
 
   it('constructor creates instance', function () {
     packageDependencyTreeRoot.mergeDependencies([sqlsnCoreDependency], {});
-    var dependencyTreeNode = new PackageDependencyTreeModel.PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreDependency, sqlsnCorePackageDefinition);
-    dependencyTreeNode.should.be.instanceOf(PackageDependencyTreeModel.PackageDependencyTreeNode);
+    var dependencyTreeNode = new PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreDependency, sqlsnCorePackageDefinition);
+    dependencyTreeNode.should.be.instanceOf(PackageDependencyTreeNode);
   });
 
   it('constructor creates instance with tag dependency', function () {
     packageDependencyTreeRoot.mergeDependencies([sqlsnCoreDependency], {});
     var sqlsnCoreBetaDependency = new PackageDependency('sqlsn_core', 'beta');
-    var dependencyTreeNode = new PackageDependencyTreeModel.PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreBetaDependency, sqlsnCorePackageDefinition);
-    dependencyTreeNode.should.be.instanceOf(PackageDependencyTreeModel.PackageDependencyTreeNode);
+    var dependencyTreeNode = new PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreBetaDependency, sqlsnCorePackageDefinition);
+    dependencyTreeNode.should.be.instanceOf(PackageDependencyTreeNode);
     dependencyTreeNode.packageVersionDefinition.version.should.be.equal('0.0.1-beta');
   });
 
@@ -130,14 +131,14 @@ describe('PackageDependencyTreeNode', function () {
   it('nearest global of local package is its parent\'s nearest global', function () {
     sqlsnDependency = new PackageDependency('sqlsn', '0.0.1');
     packageDependencyTreeRoot.mergeDependencies([sqlsnDependency], {});
-    var sqlsnCoreTreeNode = new PackageDependencyTreeModel.PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreLocalDependency, sqlsnCorePackageDefinition);
+    var sqlsnCoreTreeNode = new PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreLocalDependency, sqlsnCorePackageDefinition);
     sqlsnCoreTreeNode.getNearestGlobal().should.equal(sqlsnCoreTreeNode.parentNode.getNearestGlobal());
   });
 
   it('nearest global of non-root package is itself', function () {
     sqlsnDependency = new PackageDependency('sqlsn', '0.0.1');
     packageDependencyTreeRoot.mergeDependencies([sqlsnDependency], {});
-    var sqlsnCoreTreeNode = new PackageDependencyTreeModel.PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreDependency, sqlsnCorePackageDefinition);
+    var sqlsnCoreTreeNode = new PackageDependencyTreeNode(packageDependencyTreeRoot, sqlsnCoreDependency, sqlsnCorePackageDefinition);
     sqlsnCoreTreeNode.getNearestGlobal().should.equal(sqlsnCoreTreeNode);
   });
 

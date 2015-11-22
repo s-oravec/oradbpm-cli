@@ -6,8 +6,8 @@ chai.should();
 var DatabaseSchema = require('../../../lib/oradbpm-client/model/database-schema.model');
 var PackageVersionDeployment = require('../../../lib/oradbpm-client/model/package-version-deployment.model');
 var PackageVersionDefinition = require('../../../lib/oradbpm-client/model/package-version-definition.model');
-var PackageDependencyTreeNode = require('../../../lib/oradbpm-client/model/package-dependency-tree.model').PackageDependencyTreeNode;
-var PackageDependencyTreeRoot = require('../../../lib/oradbpm-client/model/package-dependency-tree.model').PackageDependencyTreeRoot;
+var PackageDependencyTreeNode = require('../../../lib/oradbpm-client/model/package-dependency-tree-node.model.js');
+var PackageDependencyTreeRoot = require('../../../lib/oradbpm-client/model/package-dependency-tree-root.model.js');
 var PackageDefinition = require('../../../lib/oradbpm-client/model/package-definition.model.js');
 var PackageDependency = require('../../../lib/oradbpm-client/model/package-dependency.model');
 
